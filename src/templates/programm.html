@@ -1,0 +1,37 @@
+{% extends "layout.html" %} {% block content %}
+<div class="programm">
+  <div class="programm_Uberschrift">
+    <h1>Programm</h1>
+  </div>
+
+  {% for date in dates %}
+  <div class="item_Datum">
+    <h2>{{ date }}</h2>
+  </div>
+
+  <div class="grid-container">
+    {% set dailyShows = shows[date] %}
+    {% if dailyShows.length > 0 %}
+      {% for show in dailyShows %}
+        <div class="item_Poster">
+          <img src="{{ show.poster_url }}" alt="{{ show.film_title }}" />
+        </div>
+        <div class="item_Liste">
+          <ul class="programmContainerListe">
+            <a href="/film/{{ show.film_id }}">
+              <li><h2>{{ show.film_title }}</h2></li>
+            </a>
+            <li>{{ show.time }} Uhr</li>
+            <li>{{ show.duration }} Minuten</li>
+          </ul>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="item_Liste">
+        <p>Keine Vorstellungen an diesem Tag.</p>
+      </div>
+    {% endif %}
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

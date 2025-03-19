@@ -1,0 +1,511 @@
+{% extends "layout.html" %} {% block content %}
+<main>
+  <section>
+    <p>Christopher Friedrichs, 730426</p>
+    <p>Jana Golditz, 730545</p>
+    <br />
+    <br />
+    <h1>Website für das Metropol Theater Brunsbüttel</h1>
+
+    <p>
+      Die Zielgruppe der Seite sind Kinobesucher, die Informationen zu aktuellen
+      Filmvorführungen und Preisen suchen. Der primäre Zweck der Anwendung ist
+      es, eine übersichtliche Darstellung des Filmprogramms zu bieten. Unsere
+      Design- und Funktionsentscheidungen wurden bewusst minimalistisch gewählt,
+      um den Nutzern eine klare und unkomplizierte Navigation zu ermöglichen,
+      ohne sie mit unnötigen Informationen zu überladen.
+    </p>
+  </section>
+
+  <!-- Aufbau -->
+  <section>
+    <h1>Aufbau der Anwendung</h1>
+
+    <h2>Die Struktur der Anwendung</h2>
+    <p>
+      Unsere Anwendung ist in mehrere Module unterteilt, die jeweils eine
+      spezifische Aufgabe übernehmen.
+    </p>
+    <p>
+      Die Struktur orientiert sich stark an den im WWW Labor abgegeben Aufgaben.
+      Vor allem die letzte Abgabe hat uns viel als Vorlage gedient.
+    </p>
+    <ul>
+      <li>
+        <strong>server.js:</strong> Diese Datei ist verantwortlich für das
+        Starten des Webservers. Der Server wartet auf Anfragen von den Nutzern
+        und reagiert darauf. Wenn jemand die Webseite öffnet, wird der Server
+        aktiviert. Er verarbeitet dann die Anfragen, die an ihn gestellt werden.
+      </li>
+
+      <p>
+        In dieser Datei wird auch die Verbindung zur Datenbank hergestellt.
+        Dafür wird die Funktion <code>initConnection</code> aus der Datei
+        <code>db.js</code> verwendet. Diese Funktion sorgt dafür, dass der
+        Server auf die Datenbank zugreifen kann, um wichtige Daten wie Filme
+        oder Preise abzurufen. Der Webserver läuft auf Port 8082 und verarbeitet
+        alle Anfragen mit der Funktion <code>handleRequest</code>.
+      </p>
+
+      <li>
+        <strong>db.js:</strong> In dieser Datei wird der Zugriff auf die
+        Datenbank geregelt. Die SQLite-Datenbank speichert alle wichtigen
+        Informationen, wie z. B. Filmtitel, Spielzeiten und Preise. Ohne diese
+        Datenbank könnten wir keine dynamischen Inhalte auf unserer Webseite
+        anzeigen.
+      </li>
+
+      <p>
+        Die Datei enthält die Funktion <code>initConnection()</code>, die dafür
+        sorgt, dass die Datenbank geöffnet wird, sobald der Server startet. Die
+        Funktion <code>connection()</code> ermöglicht es dem Server, auf die
+        Daten in der Datenbank zuzugreifen.
+      </p>
+
+      <li>
+        <strong>render.js:</strong> Diese Datei kümmert sich um das Rendern der
+        HTML-Seiten. Das bedeutet, sie sorgt dafür, dass die richtigen Inhalte
+        auf der Webseite angezeigt werden.
+      </li>
+
+      <p>
+        Hier kommt eine Template-Engine ins Spiel: Nunjucks. Sie hilft uns,
+        dynamische Daten wie Filminformationen, Preise oder andere Details in
+        die HTML-Seiten einzufügen. Die Funktion
+        <code>nunjucks.configure()</code> sorgt dafür, dass alle Templates
+        korrekt geladen werden. Wenn der Server eine Anfrage für eine Seite
+        bekommt, ruft er die Funktion <code>render()</code> auf, um das passende
+        Template zu laden und mit den benötigten Daten (z. B. Filme oder Preise)
+        zu füllen.
+      </p>
+
+      <li>
+        <strong>HTML-Dateien:</strong> Die HTML-Dateien sind der Kern der
+        Webseite. Sie bestimmen die Struktur und das Layout der verschiedenen
+        Seiten. Beispiele für solche Seiten sind <code>index.html</code>,
+        <code>movieDetail.html</code> oder <code>preise.html</code>.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>Aufgabenteilung der Dateien</h1>
+    <p>
+      Die gewählte Aufgabenteilung zwischen den verschiedenen Dateien sorgt für
+      eine klare Struktur und fördert die Wartbarkeit und Skalierbarkeit der
+      Anwendung. Die <code>index.html</code> kümmert sich nur um die Anzeige der
+      Programmdaten, während die <code>movieDetail.html</code> für die
+      spezifische Detailansicht eines Films verantwortlich ist. Dies sorgt
+      dafür, dass jede Seite ihren eigenen klaren Zweck erfüllt und
+      Code-Wiederverwendung ermöglicht wird.
+    </p>
+
+    <p>
+      Die <code>app.js</code> übernimmt die Logik der Datenabfrage und
+      -verarbeitung, indem sie mit der Datenbank kommuniziert und die
+      entsprechenden Informationen in die HTML-Seiten integriert. Diese Trennung
+      zwischen Datenlogik (in <code>app.js</code>) und Präsentation (in den
+      HTML-Dateien) ist ein bewährtes Designmuster, das den Code modular hält
+      und zukünftige Änderungen vereinfacht.
+    </p>
+
+    <p>
+      Mit dieser Struktur lässt sich die Anwendung leicht erweitern, z.B. durch
+      Hinzufügen neuer Seiten oder Funktionen, ohne die bestehenden Teile der
+      Anwendung negativ zu beeinflussen.
+    </p>
+  </section>
+
+  <section>
+    <h1>Nutzung von JavaScript im Frontend</h1>
+    <p>
+      JavaScript wird im Frontend eingesetzt, um interaktive Elemente und
+      dynamische Funktionen auf der Website zu ermöglichen. Es sorgt dafür, dass
+      die Seite nicht nur statisch bleibt, sondern auf Benutzeraktionen
+      reagieren kann. Ein Beispiel ist das Abrufen und Anzeigen von Daten, wie
+      zum Beispiel Filminformationen oder Preisen, ohne die Seite neu zu laden.
+    </p>
+
+    <p>
+      JavaScript ermöglicht es auch, dass die Anwendung auf bestimmte Ereignisse
+      reagiert, wie etwa das Klicken auf einen Film, um eine Detailansicht
+      anzuzeigen. Durch den Einsatz von JavaScript können Daten aus der
+      Datenbank abgerufen und sofort in die HTML-Seite integriert werden, was
+      die Benutzererfahrung verbessert und die Seite lebendiger macht.
+    </p>
+
+    <p>
+      Die enge Zusammenarbeit von HTML, CSS und JavaScript sorgt für eine
+      benutzerfreundliche, reaktive Oberfläche, bei der die Darstellung und
+      Funktionalität der Seite effizient und interaktiv sind.
+    </p>
+  </section>
+
+  <section>
+    <h1>Funktionsweise der Seiten</h1>
+
+    <h2>1. Startseite (index.html)</h2>
+    <p>
+      Die Startseite ist die erste Seite, die angezeigt wird, wenn der Benutzer
+      die Anwendung besucht. Sie zeigt das Programm für den aktuellen Tag sowie
+      für die nächsten zwei Tage an. Die Daten für das Programm werden aus der
+      Datenbank geladen und in Listen angezeigt. Jede Filmreihe ist nach Datum
+      unterteilt und zeigt die Titel der Filme sowie die Uhrzeit ihrer
+      Vorführung.
+    </p>
+
+    <p>
+      In der Anwendung werden für die verschiedenen Tage (Heute, Morgen,
+      Übermorgen) separate Datenobjekte genutzt, um die jeweiligen Filme
+      anzuzeigen. Die Filme sind in einer Liste angeordnet, und jeder Film ist
+      als Link dargestellt, der den Benutzer zu einer Detailseite des Films
+      führt. Die Filme werden anhand ihrer Spielzeit aufgelistet.
+    </p>
+
+    <p>
+      Die Struktur auf der Seite wird durch Klassen wie
+      <code>logoIndex</code> (für das Logo) und <code>program-list</code> (für
+      die Liste der Filme) organisiert. Die Überschrift für jeden Abschnitt
+      (Heute, Morgen, Übermorgen) ist mit der Klasse <code>tabs</code> versehen,
+      um den jeweiligen Programmtag klar zu kennzeichnen.
+    </p>
+
+    <p><strong>Funktion zum Anzeigen der Filme des heutigen Tages:</strong></p>
+    <p>
+      Um die Filme des heutigen Tages anzuzeigen, wird die Datenstruktur
+      <code>daily_schedule</code> genutzt. Diese enthält die Filme des aktuellen
+      Tages, die aus der Datenbank geladen wurden. Die Filme werden dann in
+      einer Schleife durchlaufen und mit der Klasse <code>program-list</code> in
+      eine geordnete Liste eingefügt. Jeder Film wird dabei als Link
+      dargestellt, der auf eine Detailseite des Films verweist.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Filmdetailseite (movieDetail.html)</h2>
+    <p>
+      Die Filmdetailseite wird geladen, wenn der Benutzer auf einen Film in der
+      Programmübersicht klickt. Sie zeigt detaillierte Informationen zu einem
+      einzelnen Film, wie den Titel, die Beschreibung, das Poster sowie
+      zusätzliche Informationen wie Regisseur und Schauspieler.
+    </p>
+
+    <p><strong>Funktionsweise in app.js:</strong></p>
+    <p>
+      In der Datei <code>app.js</code> wird die Route für die Filmdetailseite
+      durch eine Bedingung geprüft: Wenn die URL den Pfad
+      <code>/movies</code> enthält und eine gültige ID im Parameter
+      <code>ID</code> angegeben ist, wird die Anfrage für die Detailseite des
+      Films bearbeitet.
+    </p>
+
+    <p>
+      Die ID des Films wird aus den URL-Parametern extrahiert, mit
+      <code>url.searchParams.get("ID")</code>. Diese ID wird dann in eine
+      Ganzzahl umgewandelt und geprüft, ob sie gültig ist. Anschließend wird mit
+      der Methode <code>model.get(movieId)</code> der Film aus der Datenbank
+      abgerufen.
+    </p>
+
+    <p>
+      Die Daten des Films (z. B. Titel, Beschreibung, Poster) sowie alle
+      Bilderpfade werden dann in das Template
+      <code>movieDetail.html</code> übergeben und gerendert. Wenn der Film nicht
+      gefunden wird, wird eine Fehlermeldung angezeigt.
+    </p>
+  </section>
+
+  <section>
+    <h2>3. Preisliste (preise.html)</h2>
+    <p>
+      Die Preisseite zeigt eine Liste von Ticketpreisen an, die aus der
+      Datenbank geladen werden. Jede Preiskategorie (z. B. Erwachsener,
+      Ermäßigt) wird mit ihrem Preis angezeigt. Die Preise sind in einer
+      geordneten Liste unter der Klasse <code>price-list</code> aufgelistet.
+    </p>
+
+    <p>
+      Die Preise werden durch Schleifen in Nunjucks dynamisch angezeigt,
+      basierend auf den in der Datenbank gespeicherten Daten. Jede
+      Preiskategorie wird in einem <code>li</code>-Tag dargestellt, wobei die
+      Klasse <code>price</code> verwendet wird, um den Preis hervorzuheben.
+    </p>
+
+    <p><strong>Funktionsweise in app.js:</strong></p>
+    <p>
+      In der Datei <code>app.js</code> wird beim Aufruf der Seite
+      <code>/preise</code> eine Anfrage bearbeitet. Zunächst wird die Liste der
+      Preise mit der Funktion <code>model.preiseList()</code> aus der Datenbank
+      abgerufen. Gleichzeitig werden auch alle Bildpfade mit
+      <code>model.getEveryPath()</code> geholt.
+    </p>
+
+    <p>
+      Diese Daten, also die Preise und die Bildpfade, werden dann in einem
+      <code>data</code>-Objekt zusammengefasst und an das Template
+      <code>preise.html</code> übergeben.
+    </p>
+
+    <p>
+      Das Template rendert dann die Preisliste, wobei für jede Preiskategorie
+      ein Listenelement (<code>li</code>) erstellt wird. Der Preis selbst wird
+      durch die Klasse <code>price</code> hervorgehoben, um ihn visuell vom Rest
+      der Informationen abzuheben.
+    </p>
+
+    <p>
+      Falls beim Laden der Preisseite ein Fehler auftritt, wird eine
+      Fehlermeldung angezeigt.
+    </p>
+  </section>
+
+  <section>
+    <h2>4. Programmübersicht (programm.html)</h2>
+    <p>
+      Die Programmübersicht zeigt eine detaillierte Liste der Filme für ein
+      ausgewähltes Datum. Die Filme sind nach Datum gruppiert, und für jedes
+      Datum gibt es eine Liste von Filmen, die an diesem Tag gespielt werden.
+      Jeder Film wird mit Informationen wie Titel, Regisseur, Dauer und
+      Spielzeit angezeigt.
+    </p>
+
+    <p>
+      Die Filme werden in einer Rasteransicht (Grid-System) mit den Klassen
+      <code>grid-container</code> und <code>item_Poster</code> für die
+      Filmplakate sowie <code>item_Liste</code> für die Details des Films
+      angezeigt. Die Filme sind in eine Box unterteilt, die das Poster und die
+      zusätzlichen Details zu einem Film anzeigt. Jede Filmzeile enthält einen
+      Link, der den Benutzer zur Detailseite des Films führt.
+    </p>
+  </section>
+
+  <section>
+    <h2>5. Über uns Seite (ueberuns.html)</h2>
+    <p>
+      Die "Über uns"-Seite gibt den Besuchern Informationen über das Kino und
+      das Team. Sie enthält mehrere Abschnitte, die durch IDs in der Datenbank
+      abgerufen werden, wie z. B. die Einleitung des Kinos, das Team und deren
+      Mission. Diese Informationen werden dynamisch aus der Datenbank geladen
+      und auf der Seite angezeigt.
+    </p>
+
+    <p>
+      Die einzelnen Texte werden in Abschnitte unterteilt, wobei jeder Abschnitt
+      eine eigene ID hat. Auf der Seite werden die Texte mit den entsprechenden
+      Klassen wie <code>ueberuns</code> angezeigt. Die einzelnen Absätze und
+      Überschriften der Seite sind klar strukturiert, sodass der Besucher alle
+      Informationen in einer logischen Reihenfolge aufrufen kann.
+    </p>
+  </section>
+
+  <h1>Datenbank Einbindung</h1>
+
+  <section>
+    <h2>Verknüpfung der Datenbank mit der Website</h2>
+
+    <p>
+      Die Datenbank ist ein zentraler Bestandteil der Website, da sie alle
+      Informationen zu den Filmen, deren Vorführungen und Preisen speichert. Sie
+      ist mit der Website so verknüpft, dass die Anwendung auf die Daten
+      zugreifen kann, um sie dynamisch darzustellen. Es gibt zwei
+      Haupt-Tabellen, die für die Funktionalität der Seite entscheidend sind:
+      <strong>movies</strong> und <strong>movie_schedule</strong>.
+    </p>
+
+    <h3>1. Die Tabelle <code>movies</code></h3>
+    <p>
+      Die <code>movies</code>-Tabelle enthält alle grundlegenden Informationen
+      zu den Filmen, wie den Titel, die Beschreibung, das Erscheinungsdatum, die
+      Dauer und die Schauspieler. Jede Filmreihe ist durch eine einzigartige ID
+      identifiziert. Diese ID wird verwendet, um Details zu einem bestimmten
+      Film abzurufen.
+    </p>
+
+    <h3>2. Die Tabelle <code>movie_schedule</code></h3>
+    <p>
+      Die <code>movie_schedule</code>-Tabelle enthält die Spielzeiten der Filme.
+      Jeder Eintrag in dieser Tabelle verweist auf einen Film (über die
+      <code>movie_id</code>) und enthält Informationen wie das geplante Datum
+      der Vorführung (<code>show_date</code>) und die Uhrzeit
+      (<code>playtime</code>). Diese Tabelle ermöglicht es der Website, Filme
+      nach ihren jeweiligen Vorführzeiten zu filtern und darzustellen.
+    </p>
+
+    <h3>Beispiel für den Abruf der heutigen Spielzeiten:</h3>
+    <p>
+      Die Anwendung verwendet eine Funktion wie die folgende, um die Filme des
+      heutigen Tages dynamisch abzurufen:
+    </p>
+
+    <pre><code>
+        export function today_schedule(DATA) {
+          const db = connection();<br>
+          const result = db.queryEntries("SELECT m.title, ms.playtime, m.id FROM movie_schedule ms <br>
+          JOIN movies m ON ms.movie_id = m.id <br>
+          WHERE ms.show_date = CURRENT_DATE ORDER BY ms.playtime;");<br>
+          return result;
+        }
+      </code></pre>
+
+    <p>
+      In diesem Beispiel wird mithilfe einer SQL-Abfrage die
+      <code>movies</code>-Tabelle mit der <code>movie_schedule</code>-Tabelle
+      verbunden, um alle Filme für den heutigen Tag zu erhalten. Die Abfrage
+      nutzt die Funktion <code>CURRENT_DATE</code>, um nur die Vorführungen des
+      aktuellen Datums abzurufen, und sortiert die Ergebnisse nach der Spielzeit
+      des Films.
+    </p>
+
+    <p>
+      Die Anwendung gibt dann das Ergebnis der Abfrage zurück, das alle
+      relevanten Filmdaten wie Titel, Spielzeit und ID enthält. Diese Daten
+      werden dann dynamisch auf der Website angezeigt, sodass der Benutzer die
+      Filminformationen und -zeiten des heutigen Tages sehen kann.
+    </p>
+  </section>
+
+  <h1>Sicherheit der Seite</h1>
+
+  <section>
+    <h1>Sicherheit der Seite</h1>
+
+    <h2>1. Was läuft gut?</h2>
+    <ul>
+      <li>
+        <strong>Schutz vor Schadcode (XSS):</strong> Unsere Templates
+        verhindern, dass gefährlicher Code eingefügt wird.
+      </li>
+      <li>
+        <strong>Grundlegender Datenbankzugriff:</strong> Wir haben die
+        Verbindung zur Datenbank zentral geregelt.
+      </li>
+      <li>
+        <strong>E-Mail-Checks:</strong> Im Newsletter-Formular wird geprüft, ob
+        die E-Mail gültig ist.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Was könnte besser sein?</h2>
+    <ul>
+      <li>
+        <strong>Eingaben prüfen:</strong> Im Backend müssen wir sicherstellen,
+        dass nur „gute“ Daten verarbeitet werden.
+      </li>
+      <li>
+        <strong>Schutz vor Hackerangriffen:</strong> Unsere Datenbankabfragen
+        sollten sicherer gemacht werden, um Manipulationen zu verhindern.
+      </li>
+      <li>
+        <strong>Formulare schützen:</strong> Wir sollten verhindern, dass jemand
+        ungewollte Aktionen über unsere Formulare auslöst.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Was können wir tun?</h2>
+    <ul>
+      <li>Genau prüfen, was in die Datenbank kommt.</li>
+      <li>Formulare mit zusätzlichen Sicherheitsmaßnahmen schützen.</li>
+      <li>
+        Die Seite über HTTPS laufen lassen, damit alles sicher übertragen wird.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Fazit</h2>
+    <p>
+      Die Seite ist schon recht sicher, aber mit ein paar Verbesserungen können
+      wir sie noch besser schützen.
+    </p>
+  </section>
+
+  <section>
+    <h2>Überlegungen zum Progressive Enhancement</h2>
+    <p>
+      Wir finden die Idee des Progressive Enhancements gut, weil so auch ältere
+      Geräte und Browser die Website weiterhin nutzen können. Auf diese Weise
+      bleibt die Seite auch langfristig funktional, unabhängig von der
+      Technologie, die der Nutzer verwendet.
+    </p>
+  </section>
+</main>
+{% endblock %}
+
+<!-- <h1>Übersicht der Seitenstruktur und Funktionen</h1>
+    
+    <section>
+      <h2>1. Startseite: index.html</h2>
+      <p>Die <strong>Startseite</strong> zeigt das Programm für die nächsten drei Tage: "Heute", "Morgen" und "Übermorgen".</p>
+      <h3>Dynamische Elemente:</h3>
+      <ul>
+        <li><strong>Logo:</strong> Das Logo wird aus der Liste <code>imagePaths</code> geladen, basierend auf der ID 2.</li>
+        <li><strong>Tagesprogramm:</strong> Filme werden für "Heute", "Morgen" und "Übermorgen" angezeigt:
+          <ul>
+            <li><code>daily_schedule</code> (heutiges Programm)</li>
+            <li><code>tommorow_schedule</code> (morgiges Programm)</li>
+            <li><code>theDayAfterTomorrow_schedule</code> (übermorgiges Programm)</li>
+          </ul>
+        </li>
+        <li><strong>Verlinkungen:</strong> Jeder Film wird mit einem Detail-Link dargestellt, der zur Seite des jeweiligen Films führt (<code>/movies?ID={{ movie.id }}</code>).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Film-Detailseite: movieDetail.html</h2>
+      <p>Die <strong>Film-Detailseite</strong> zeigt detaillierte Informationen zu einem einzelnen Film basierend auf der Film-ID.</p>
+      <h3>Dynamische Elemente:</h3>
+      <ul>
+        <li><strong>Titel und Beschreibung:</strong> Diese werden aus den Variablen <code>specificMovie.title</code> und <code>specificMovie.description</code> geladen.</li>
+        <li><strong>Poster:</strong> Das Poster des Films wird dynamisch aus <code>specificMovie.poster_path</code> angezeigt.</li>
+        <li><strong>Details:</strong> Weitere Film-Details wie:
+          <ul>
+            <li>Veröffentlichungsdatum: <code>specificMovie.release_date</code></li>
+            <li>Dauer in Minuten: <code>specificMovie.duration_minutes</code></li>
+            <li>Regisseur: <code>specificMovie.director</code></li>
+            <li>Besetzung: <code>specificMovie.cast</code></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Preisübersicht: Preise.html</h2>
+      <p>Die <strong>Preisübersicht</strong> zeigt die Preise für verschiedene Angebote an.</p>
+      <h3>Dynamische Elemente:</h3>
+      <ul>
+        <li><strong>Preisangaben:</strong> Jede Preisübersicht wird mit einer Bezeichnung (<code>preis.bezeichnung</code>) und dem entsprechenden Preis (<code>preis.preis</code>) aus der Datenquelle <code>Preise</code> angezeigt.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Programmübersicht: programm.html</h2>
+      <p>Die <strong>Programmübersicht</strong> zeigt das vollständige Filmprogramm, gruppiert nach Datum.</p>
+      <h3>Dynamische Elemente:</h3>
+      <ul>
+        <li><strong>Filme nach Datum:</strong> Filme werden in Gruppen basierend auf dem Datum angezeigt, das durch die Variable <code>moviesByDate</code> gesteuert wird. Für jedes Datum wird eine eigene Gruppe angezeigt.</li>
+        <li><strong>Film-Details:</strong> Jeder Film wird mit einem Poster, Titel, Regisseur, Dauer und Spielzeit angezeigt, und jedes Element ist verlinkt, sodass Benutzer zur Film-Detailseite gelangen können. Verlinkung erfolgt durch <code>/movies?ID={{ movie.id }}</code>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Über uns: ueberuns.html</h2>
+      <p>Die <strong>Über uns</strong>-Seite stellt Informationen über das Kino bereit.</p>
+      <h3>Dynamische Elemente:</h3>
+      <ul>
+        <li><strong>Texte:</strong> Die Texte auf dieser Seite stammen aus der Datenquelle <code>ueberUns</code>, die verschiedene Abschnitte (mit IDs 1 bis 4) enthält. Jeder Abschnitt wird als Überschrift (<code><h2></code>) oder Absatz (<code><p></code>) angezeigt.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Besonderheiten und Optimierungsmöglichkeiten</h2>
+      <ul>
+        <li><strong>Wiederverwendbarkeit:</strong> Die klare Trennung der Layouts und die Verwendung von Schleifen (<code>for</code>-Blöcke) machen die Templates einfach wartbar und erweitern.</li>
+        <li><strong>Datenquellen:</strong> Alle dynamischen Daten wie <code>imagePaths</code>, <code>daily_schedule</code>, <code>specificMovie</code>, <code>moviesByDate</code>, <code>ueberUns</code> und <code>Preise</code> müssen aus einer Datenquelle (z. B. einer Datenbank) abgerufen werden, um korrekt in die Templates eingefügt zu werden.</li>
+        <li><strong>Design:</strong> Du verwendest <code>&lt;ul&gt;</code>-Strukturen mit CSS-Klassen, die eine einfache Anpassung der Darstellung durch ein Stylesheet ermöglichen.</li>
+        <li><strong>Fehlerbehandlung:</strong> Stelle sicher, dass alle dynamischen Daten korrekt vom Backend in die Templates übermittelt werden, um Fehler bei der Anzeige zu vermeiden.</li>
+      </ul>
+    </section> -->

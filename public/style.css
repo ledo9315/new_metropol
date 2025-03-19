@@ -1,0 +1,685 @@
+/* Body: Flex-Layout beibehalten */
+body {
+  color: #231f20;
+  background-color: #f1efe7;
+  font-family: "League Spartan", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0; /* Sicherstellen, dass kein Standard-Margin stört */
+}
+
+/* Header und Footer bleiben unverändert */
+header {
+  text-align: center;
+  margin: 2em 0;
+}
+
+/* Hauptinhalt (main) zentrieren */
+main {
+  flex-grow: 1;
+  max-width: 100%;
+  width: 1200px;
+  margin: 0 auto; /* Horizontal zentrieren */
+  padding: 0 40px;
+  box-sizing: border-box;
+  display: flex; /* Flex-Layout für main */
+  justify-content: center; /* Horizontal zentrieren */
+  align-items: center; /* Vertikal zentrieren */
+  min-height: calc(100vh - 200px); /* Sicherstellen, dass main genug Höhe hat (Header + Footer abziehen) */
+}
+
+/* Dashboard: Anpassungen für die Zentrierung */
+.dashboard {
+  max-width: 800px;
+  width: 100%; /* Volle Breite innerhalb des main Containers */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Rest der bestehenden Styles bleibt unverändert */
+.header-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+header ul {
+  padding-inline-start: 0px;
+  white-space: nowrap;
+  margin: 0;
+  flex-grow: 1; 
+}
+
+header li {
+  width: 15%;
+  display: inline-block;
+  margin: 0 12px;
+}
+
+header li a {
+  text-decoration: none;
+  color: #231f20;
+  font-size: 18px;
+}
+
+header li:hover {
+  font-weight: bold;
+}
+
+.logoTopnav {
+  width: 3em;
+  margin-right: 20px; 
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #231f20;
+  margin: 1em 0;
+}
+
+/* Typografie */
+h1 {
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+h3 {
+  font-weight: normal;
+}
+
+p {
+  font-size: 20px;
+}
+
+section p,
+section ul,
+.doku p,
+.doku_Liste,
+.links_doku a,
+.kolophon ul,
+a,
+.impressum p {
+  line-height: 1.5;
+}
+
+section p {
+  font-size: 1em;
+}
+
+/* Newsletter */
+#newsletterForm {
+  margin-top: 8em;
+}
+
+/* Index-Seite */
+index {
+  width: 90%;
+  max-width: 600px;
+  font-size: 20px;
+}
+
+index li a {
+  text-decoration: none;
+  color: #231f20;
+}
+
+index li:hover {
+  font-weight: bold;
+}
+
+/* Logo Index */
+.logoIndex {
+  text-align: center;
+  padding-inline-start: 0px;
+}
+
+.logoIndex ul {
+  padding-inline-start: 0px;
+}
+
+.logoIndex li {
+  display: inline-block;
+  width: 40%;
+}
+
+.logoIndex li img {
+  width: 100%;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+  font-size: 1em;
+}
+
+.tabs strong {
+  font-weight: bold;
+}
+
+/* Programmliste */
+.program-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.program-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+}
+
+.program-list li:last-child {
+  border-bottom: none;
+}
+
+.time {
+  font-weight: bold;
+}
+
+/* Formular */
+form {
+  text-align: center;
+}
+
+form h3 {
+  font-weight: normal;
+}
+
+form input {
+  margin: 5px 0;
+  padding: 5px 15px;
+  font-size: 1em;
+  border-radius: 28px;
+  border: 2px solid #231f20;
+  font-family: "League Spartan", Impact;
+  text-align: center;
+}
+
+form input:focus {
+  outline: honeydew;
+}
+
+form input:valid {
+  border: 2px solid #7fbe7b;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+}
+
+.copyright {
+  font-size: 15px;
+}
+
+.footer-links-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+}
+
+.footer-links {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #231f20;
+}
+
+.footer-link {
+  color: #231f20;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Programm-Seite */
+.programm {
+  display: block;
+  padding: 20px;
+}
+
+.item_Liste {
+  margin: auto;
+}
+
+.Item_Poster {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.item_Poster img {
+  max-width: 100%;
+  height: auto;
+}
+
+.programmContainerListe {
+  list-style: none;
+  padding: 100px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 2px 4px 10px rgba(35, 31, 32);
+  margin: 0;
+  text-align: center;
+}
+
+.programmContainerListe a {
+  line-height: 1.5;
+  text-decoration: none;
+  color: #231f20;
+}
+
+.programmContainerListe li {
+  padding: 5px 0;
+}
+
+.programm_Uberschrift {
+  text-align: center;
+}
+
+/* Grid Programm */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  padding: 50px;
+}
+
+.item_Datum {
+  text-align: center;
+}
+
+/* Preisseite */
+.preise {
+  width: 90%;
+  max-width: 600px;
+  font-size: 20px;
+}
+
+.preise li a {
+  text-decoration: none;
+  color: #231f20;
+}
+
+.logoPreise {
+  text-align: center;
+  padding: 20px;
+  margin: 80px 0;
+  padding-inline-start: 0px;
+}
+
+.logoPreise ul {
+  padding-inline-start: 0px;
+}
+
+.logoPreise li {
+  display: inline-block;
+  width: 40%;
+}
+
+.logoPreise li img {
+  width: 100%;
+}
+
+/* Preis-Liste */
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #231f20;
+}
+
+/* Über uns */
+.ueberuns {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.ueberuns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ueberuns li {
+  margin-bottom: 1em;
+}
+
+.ueberuns h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Movie Details */
+.grid-movieDetail {
+  margin: -2.5em 0 3em 0;
+}
+
+.movieDetail_Titel {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.movieDetail_Poster {
+  max-width: 300px;
+  margin: auto;
+  padding: 20px;
+}
+
+.movieDetail_Poster img {
+  max-width: 100%;
+  height: auto;
+}
+
+.movieDetail_Text {
+  text-align: center;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+.movieDetail_Liste ul {
+  text-align: center;
+  list-style-type: none;
+  margin-right: 2em;
+  line-height: 1.5;
+}
+
+/* Timeline */
+.timeline ul {
+  list-style-type: none;
+}
+
+/* Media Queries */
+@media screen and (min-width: 1000px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .item_Liste {
+    margin: auto;
+    padding: 50px;
+  }
+
+  .Item_Poster {
+    max-width: 600px;
+  }
+
+  .grid-movieDetail {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .movieDetail_Titel {
+    grid-column: 2 / 4;
+  }
+
+  .movieDetail_Poster {
+    max-width: 400px;
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+  }
+
+  .movieDetail_Text {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+    margin: auto;
+  }
+
+  .movieDetail_Liste {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+  }
+
+  .ueberuns {
+    padding: 0 200px;
+  }
+
+  header li a {
+    font-size: 25px;
+  }
+
+  .logoTopnav {
+    width: 6em;
+    margin-right: 30px; 
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  figure img {
+    max-width: 600px;
+    height: auto;
+    border: 2px solid #f1efe7;
+  }
+}
+
+/* Bestehende Dashboard-Styles beibehalten */
+.success-message {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.error-message {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.film-list {
+  list-style: none;
+  padding: 0;
+}
+
+.film-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #231f20;
+}
+
+.film-list li:last-child {
+  border-bottom: none;
+}
+
+.actions a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #231f20;
+}
+
+.actions a:hover {
+  text-decoration: underline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  padding: 8px;
+  border: 2px solid #231f20;
+  border-radius: 5px;
+  font-family: "League Spartan", sans-serif;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  padding: 10px;
+  background-color: #231f20;
+  color: #f1efe7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "League Spartan", sans-serif;
+}
+
+button:hover {
+  background-color: #3a3435;
+}
+
+.delete-button {
+  background-color: #d32f2f;
+  max-width: 400px;
+  width: 100%;
+}
+
+.delete-button:hover {
+  background-color: #b71c1c;
+}
+
+.cancel-button {
+  max-width: 400px !important;
+  width: 100%;
+  display: inline-block;
+  padding: 10px 0;
+  background-color: #757575;
+  color: #f1efe7;
+  text-decoration: none;
+  border-radius: 5px;
+
+}
+
+.cancel-button:hover {
+  background-color: #616161;
+}
+
+.delete-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+/* public/css/style.css */
+
+/* 404-Seite */
+.not-found {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.not-found h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #231f20;
+  margin-bottom: 20px;
+}
+
+.not-found p {
+  font-size: 20px;
+  color: #231f20;
+  margin-bottom: 20px;
+}
+
+.not-found a {
+  color: #231f20;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #231f20;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.not-found a:hover {
+  background-color: #231f20;
+  color: #f1efe7;
+}
+
+/* public/css/style.css */
+.show-entry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.show-entry label {
+  flex: 0 0 120px;
+}
+
+.show-entry input {
+  flex: 1;
+  min-width: 150px;
+}
+
+.show-entry button {
+  background-color: #d32f2f;
+  color: #f1efe7;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.show-entry button:hover {
+  background-color: #b71c1c;
+}
+
+.add-show-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.edit-form-button {
+  width: 100%;
+  display: block;
+}
+
+.cancel-button {
+  width: 100%!important;
+  display: inline-block;
+}
+
+.film-title:active {
+  color:#231f20
+}

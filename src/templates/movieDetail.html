@@ -1,0 +1,30 @@
+{% extends "layout.html" %} {% block content %}
+<movieDetail>
+  <div class="grid-movieDetail">
+    <div class="movieDetail_Titel">
+      <h1> {{ film.title }}</h1>
+    </div>
+
+
+
+    
+    <div class="movieDetail_Poster">
+      <img
+      src="{{ film.poster_url }}"
+      alt="{{ film.title }}"
+      />
+      <div class="movieDetail_Text">{{ film.description }}</div>
+    </div>
+
+    <div class="movieDetail_Liste">
+    <ul>
+      <li>{{ film.release_date }}</li>
+      <li>{{ film.duration }} Minuten </li>
+      <li>{{ film.director }}</li>
+      <li>{{ film.cast }}</li>
+    </ul>
+  </div>
+  </div>
+
+</movieDetail>
+{% endblock %}
