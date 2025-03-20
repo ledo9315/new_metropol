@@ -18,7 +18,7 @@ export async function errorMiddleware(ctx, next) {
   } catch (err) {
     console.error(err);
     ctx.response.status = 500;
-    ctx.response.body = await render("error.njk", {
+    ctx.response.body = await render("not-found.html", {
       error: "Interner Serverfehler",
     });
   }

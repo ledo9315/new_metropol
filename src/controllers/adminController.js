@@ -1,4 +1,3 @@
-// src/controllers/adminController.js
 import { filmService } from "../services/filmService.js";
 import { showService } from "../services/showService.js";
 import { userService } from "../services/userService.js";
@@ -27,10 +26,7 @@ export const adminController = {
           ctx.response.redirect("/admin?error=Film nicht gefunden");
           return;
         }
-        // Shows für den Film laden
-        if (action === "edit") {
-          film.shows = showService.getShowsByFilmId(filmId);
-        }
+        if (action === "edit") film.shows = showService.getShowsByFilmId(filmId);
       }
     }
 

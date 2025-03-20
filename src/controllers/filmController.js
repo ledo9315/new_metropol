@@ -1,4 +1,3 @@
-// src/controllers/filmController.js
 import { filmService } from "../services/filmService.js";
 import { showService } from "../services/showService.js";
 

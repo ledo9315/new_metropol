@@ -683,3 +683,8 @@ button:hover {
 .film-title:active {
   color:#231f20
 }
+
+.datenschutz, .www-doku {
+  display: flex;
+  flex-direction: column;
+}

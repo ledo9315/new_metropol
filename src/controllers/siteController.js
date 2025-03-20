@@ -1,33 +1,14 @@
 import { filmService } from "../services/filmService.js";
 import { showService } from "../services/showService.js";
 import { render } from "../services/render.js"
+import * as formatDate from "../utils/formatDate.js";
 
-
-function formatDate(date) {
-  return date.toISOString().split("T")[0];
-}
-
-function getTodayDate() {
-  return formatDate(new Date());
-}
-
-function getTomorrowDate() {
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  return formatDate(tomorrow);
-}
-
-function getDayAfterTomorrowDate() {
-  const dayAfterTomorrow = new Date();
-  dayAfterTomorrow.setDate(dayAfterTomorrow.getDate() + 2);
-  return formatDate(dayAfterTomorrow);
-}
 
 export const siteController = {
   home: async (ctx) => {
-    const today = getTodayDate();
-    const tomorrow = getTomorrowDate();
-    const dayAfterTomorrow = getDayAfterTomorrowDate();
+    const today = formatDate.getTodayDate();
+    const tomorrow = formatDate.getTomorrowDate();
+    const dayAfterTomorrow = formatDate.getDayAfterTomorrowDate();
     const todayShows = showService.getShowsByDate(today);
     const tomorrowShows = showService.getShowsByDate(tomorrow);
     const dayAfterTomorrowShows = showService.getShowsByDate(dayAfterTomorrow);
@@ -35,13 +16,13 @@ export const siteController = {
   },
   programm: async (ctx) => {
     const query = ctx.request.url.searchParams;
-    const startDate = query.get("start") || getTodayDate();
+    const startDate = query.get("start") || formatDate.getTodayDate();
     const dates = [];
     const dateShows = {};
     for (let i = 0; i < 7; i++) {
       const date = new Date(startDate);
       date.setDate(date.getDate() + i);
-      const formattedDate = formatDate(date);
+      const formattedDate = formatDate.formatDate(date);
       dates.push(formattedDate);
       dateShows[formattedDate] = showService.getShowsByDate(formattedDate);
     }
@@ -58,6 +39,7 @@ export const siteController = {
     const shows = showService.getShowsByFilmId(filmId);
     ctx.response.body = render("movieDetail.html", { film, shows });
   },
+
   about: async (ctx) => {
     ctx.response.body = render("ueberuns.html", {});
   },
