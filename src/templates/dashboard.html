@@ -37,9 +37,9 @@
 
   {% elif action == "create" %}
     <h2>Neuen Film erstellen</h2>
-    <form action="/admin/films/create" method="post">
+    <form action="/admin/films" method="post">
       <label for="title">Titel:</label>
-      <input type="text" id="title" name="title" required>
+      <input type="text" id="title" name="title">
 
       <label for="director">Regisseur:</label>
       <input type="text" id="director" name="director">
@@ -80,7 +80,7 @@
     <h2>Film bearbeiten: {{ film.title }}</h2>
     <form action="/admin/films/update/{{ film.id }}" method="post">
       <label for="title">Titel:</label>
-      <input type="text" id="title" name="title" value="{{ film.title }}" required>
+      <input type="text" id="title" name="title" value="{{ film.title }}" >
 
       <label for="director">Regisseur:</label>
       <input type="text" id="director" name="director" value="{{ film.director }}">

@@ -19,10 +19,42 @@ export const filmController = {
       release_date: body.get("release_date"),
     };
 
-    // Film erstellen
+    if (!film.title || film.title.trim() === "") {
+      ctx.response.redirect("/admin?action=create&error=Titel ist erforderlich");
+      return;
+    }
+
+    if(!film.director || film.director.trim() === "") {
+      ctx.response.redirect("/admin?action=create&error=Regisseur ist erforderlich");
+      return;
+    }
+
+    if (film.duration && (isNaN(film.duration) || film.duration <= 0)) {
+      ctx.response.redirect("/admin?action=create&error=Die Dauer muss eine positive Zahl sein");
+      return;
+    }
+
+    if(!film.description || film.description.trim() === "") {
+      ctx.response.redirect("/admin?action=create&error=Beschreibung ist erforderlich");
+      return;
+    }
+
+    if(!film.cast || film.cast.trim() === "") {
+      ctx.response.redirect("/admin?action=create&error=Besetzung ist erforderlich");
+      return;
+    }
+
+    if (film.release_date && !/^\d{4}-\d{2}-\d{2}$/.test(film.release_date)) {
+      ctx.response.redirect("/admin?action=create&error=Ungültiges Erscheinungsdatum (YYYY-MM-DD erforderlich)");
+      return;
+    }
+    if (film.poster_url && !/^https?:\/\/.+\..+/.test(film.poster_url)) {
+      ctx.response.redirect("/admin?action=create&error=Ungültige Poster-URL");
+      return;
+    }
+
     const filmId = filmService.createFilm(film);
 
-    // Shows aus dem Formular verarbeiten
     const shows = [];
     for (const [key, value] of body.entries()) {
       const match = key.match(/^shows\[(\d+)\]\[(date|time)\]$/);
@@ -34,7 +66,6 @@ export const filmController = {
       }
     }
 
-    // Shows speichern
     for (const show of shows.filter(s => s.date && s.time)) {
       showService.createShow(show);
     }
@@ -55,13 +86,45 @@ export const filmController = {
       release_date: body.get("release_date"),
     };
 
-    // Film aktualisieren
+    if (!updatedFilm.title || updatedFilm.title.trim() === "") {
+      ctx.response.redirect(`/admin?action=edit&id=${filmId}&error=Titel ist erforderlich`);
+      return;
+    }
+
+    if (!updatedFilm.director || updatedFilm.director.trim() === "") {
+      ctx.response.redirect(`/admin?action=edit&id=${filmId}&error=Regisseur ist erforderlich`);
+      return;
+    }
+
+    if (updatedFilm.duration && (isNaN(updatedFilm.duration) || updatedFilm.duration <= 0)) {
+      ctx.response.redirect(`/admin?action=edit&id=${filmId}&error=Die Dauer muss eine positive Zahl sein`);
+      return;
+    }
+
+    if (!updatedFilm.description || updatedFilm.description.trim() === "") {
+      ctx.response.redirect(`/admin?action=edit&id=${filmId}&error=Beschreibung ist erforderlich`);
+      return;
+    }
+
+    if (!updatedFilm.cast || updatedFilm.cast.trim() === "") {
+      ctx.response.redirect(`/admin?action=edit&id=${filmId}&error=Besetzung ist erforderlich`);
+      return;
+    }
+
+    if (updatedFilm.release_date && !/^\d{4}-\d{2}-\d{2}$/.test(updatedFilm.release_date)) {
+      ctx.response.redirect(`/admin?action=edit&id=${filmId}&error=Ungültiges Erscheinungsdatum (YYYY-MM-DD erforderlich)`);
+      return;
+    }
+    if (updatedFilm.poster_url && !/^https?:\/\/.+\..+/.test(updatedFilm.poster_url)) {
+      ctx.response.redirect(`/admin?action=edit&id=${filmId}&error=Ungültige Poster-URL`);
+      return;
+    }
+
+
     filmService.updateFilm(filmId, updatedFilm);
 
-    // Bestehende Shows laden
     const existingShows = showService.getShowsByFilmId(filmId);
 
-    // Shows aus dem Formular verarbeiten
     const shows = [];
     for (const [key, value] of body.entries()) {
       const match = key.match(/^shows\[(\d+)\]\[(id|date|time)\]$/);
@@ -73,23 +136,22 @@ export const filmController = {
       }
     }
 
-    // Bestehende Shows aktualisieren oder löschen
+
     for (const existingShow of existingShows) {
       const updatedShow = shows.find(s => s.id && parseInt(s.id) === existingShow.id);
       if (updatedShow) {
-        // Show aktualisieren
+
         showService.updateShow(existingShow.id, {
           film_id: filmId,
           date: updatedShow.date,
           time: updatedShow.time,
         });
       } else {
-        // Show löschen, wenn sie nicht mehr im Formular vorhanden ist
+
         showService.deleteShow(existingShow.id);
       }
     }
 
-    // Neue Shows hinzufügen
     for (const show of shows.filter(s => !s.id && s.date && s.time)) {
       showService.createShow(show);
     }
