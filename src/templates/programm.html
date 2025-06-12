@@ -6,28 +6,47 @@
   </header>
 
   {% for date in dates %}
-  <section class="day-section">
+  <section class="day-section" aria-labelledby="day-{{ loop.index0 }}">
     <div class="day-header">
-      <h2 class="day-title">{{ date }}</h2>
-      <div class="day-divider"></div>
+      <h2 id="day-{{ loop.index0 }}" class="day-title">{{ date }}</h2>
+      <div class="day-divider" role="separator" aria-hidden="true"></div>
     </div>
 
     {% set dailyShows = shows[date] %} {% if dailyShows.length > 0 %}
-    <div class="shows-grid">
+    <div
+      class="shows-grid"
+      role="grid"
+      aria-label="Filmvorstellungen am {{ date }}"
+    >
       {% for show in dailyShows %}
-      <article class="show-card">
-        <a href="/film/{{ show.film_id }}" class="show-link">
+      <article class="show-card" role="gridcell">
+        <a
+          href="/film/{{ show.film_id }}"
+          class="show-link"
+          aria-label="Details zu {{ show.film_title }} anzeigen"
+        >
           <div class="show-poster">
-            <img src="{{ show.poster_url }}" alt="{{ show.film_title }}" />
-            <div class="poster-overlay">
+            <img
+              src="{{ show.poster_url }}"
+              alt="Filmplakat: {{ show.film_title }}"
+            />
+            <div class="poster-overlay" aria-hidden="true">
               <span class="view-details">Details ansehen</span>
             </div>
           </div>
           <div class="show-info">
             <h3 class="show-title">{{ show.film_title }}</h3>
-            <div class="show-meta">
-              <span class="show-time">{{ show.time }} Uhr</span>
-              <span class="show-duration">{{ show.duration }} Min</span>
+            <div
+              class="show-meta"
+              role="group"
+              aria-label="Vorstellungsdetails"
+            >
+              <span class="show-time" aria-label="Vorstellungszeit"
+                >{{ show.time }} Uhr</span
+              >
+              <span class="show-duration" aria-label="Filmdauer"
+                >{{ show.duration }} Min</span
+              >
             </div>
           </div>
         </a>
@@ -35,8 +54,8 @@
       {% endfor %}
     </div>
     {% else %}
-    <div class="no-shows">
-      <div class="no-shows-icon">🎬</div>
+    <div class="no-shows" role="status" aria-live="polite">
+      <div class="no-shows-icon" aria-hidden="true">🎬</div>
       <p class="no-shows-text">Keine Vorstellungen an diesem Tag</p>
     </div>
     {% endif %}
@@ -44,7 +63,7 @@
   {% endfor %}
 
   <div class="programm-footer">
-    <p class="info-text">
+    <p class="info-text" role="note">
       Änderungen vorbehalten. Für aktuelle Informationen kontaktieren Sie uns
       direkt.
     </p>

@@ -6,24 +6,39 @@
     </header>
 
     <div class="movieDetail_Content">
-      <section class="movieDetail_Poster">
+      <section class="movieDetail_Poster" aria-labelledby="poster-heading">
+        <h2 id="poster-heading" class="sr-only">Filmplakat</h2>
         <figure>
-          <img src="{{ film.poster_url }}" alt="{{ film.title }}" />
+          <img
+            src="{{ film.poster_url }}"
+            alt="Filmplakat für {{ film.title }}"
+          />
         </figure>
       </section>
 
-      <section class="movieDetail_Info">
+      <section class="movieDetail_Info" aria-labelledby="info-heading">
+        <h2 id="info-heading" class="sr-only">Filminformationen</h2>
         <div class="movieDetail_Text">
           <p>{{ film.description }}</p>
         </div>
 
-        <div class="movieDetail_Liste">
-          <h2>Details</h2>
-          <ul>
-            <li><strong>Erscheinungsjahr:</strong> {{ film.release_date }}</li>
-            <li><strong>Dauer:</strong> {{ film.duration }} Minuten</li>
-            <li><strong>Regisseur:</strong> {{ film.director }}</li>
-            <li><strong>Besetzung:</strong> {{ film.cast }}</li>
+        <div
+          class="movieDetail_Liste"
+          role="region"
+          aria-labelledby="details-heading"
+        >
+          <h2 id="details-heading">Details</h2>
+          <ul role="list" aria-label="Filmdetails">
+            <li role="listitem">
+              <strong>Erscheinungsjahr:</strong> {{ film.release_date }}
+            </li>
+            <li role="listitem">
+              <strong>Dauer:</strong> {{ film.duration }} Minuten
+            </li>
+            <li role="listitem">
+              <strong>Regisseur:</strong> {{ film.director }}
+            </li>
+            <li role="listitem"><strong>Besetzung:</strong> {{ film.cast }}</li>
           </ul>
         </div>
       </section>

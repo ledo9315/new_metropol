@@ -23,80 +23,129 @@
     <link href="/public/style.css" rel="stylesheet" />
   </head>
   <body>
-    <header>
+    <header role="banner">
       <div class="header-container">
-        <a href="/">
-          <img class="logoTopnav" src="/public/img/mtLogo.png" alt="mtLogo" />
+        <a href="/" aria-label="Zur Startseite des Kino Metropol">
+          <img
+            class="logoTopnav"
+            src="/public/img/mtLogo.png"
+            alt="Kino Metropol Logo"
+          />
         </a>
-        <ul>
-          <li>
-            <a href="/" title="Zur Startseite des Kino Metropol">Startseite</a>
-          </li>
-          <li>
-            <a href="/programm" title="Aktuelles Kinoprogramm und Vorstellungen"
-              >Programm</a
-            >
-          </li>
-          <li>
-            <a href="/preise" title="Eintrittspreise und Ermäßigungen"
-              >Preise</a
-            >
-          </li>
-          <li>
-            <a href="/ueberuns" title="Informationen über das Kino Metropol"
-              >Über uns</a
-            >
-          </li>
-        </ul>
+        <nav role="navigation" aria-label="Hauptnavigation">
+          <ul>
+            <li>
+              <a
+                href="/"
+                title="Zur Startseite des Kino Metropol"
+                aria-current="page"
+                >Startseite</a
+              >
+            </li>
+            <li>
+              <a
+                href="/programm"
+                title="Aktuelles Kinoprogramm und Vorstellungen"
+                >Programm</a
+              >
+            </li>
+            <li>
+              <a href="/preise" title="Eintrittspreise und Ermäßigungen"
+                >Preise</a
+              >
+            </li>
+            <li>
+              <a href="/ueberuns" title="Informationen über das Kino Metropol"
+                >Über uns</a
+              >
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
-    <main>{% block content %} {% endblock %}</main>
-    <footer>
-      <p class="copyright">Metropol Theater 2025</p>
-      <nav class="footer-links">
-        <ul class="footer-links-list">
-          <li>
-            <a
-              class="footer-link"
-              href="/impressum"
-              title="Impressum und rechtliche Informationen"
-              >Impressum</a
-            >
-          </li>
-          <li>
-            <a
-              class="footer-link"
-              href="/datenschutz"
-              title="Datenschutzerklärung"
-              >Datenschutz</a
-            >
-          </li>
-          <li>
-            <a
-              class="footer-link"
-              href="/kolophon"
-              title="Technische Informationen"
-              >Kolophon</a
-            >
-          </li>
-          <li>
-            <a
-              class="footer-link"
-              href="/zeitleiste"
-              title="Geschichte des Kino Metropol"
-              >Zeitleiste</a
-            >
-          </li>
-          <li>
-            <a
-              class="footer-link"
-              href="/www-dokumentation"
-              title="Technische Dokumentation"
-              >WWW-Dokumentation</a
-            >
-          </li>
-        </ul>
-      </nav>
+    <main role="main" aria-label="Hauptinhalt">
+      {% block content %} {% endblock %}
+    </main>
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <div class="footer-info">
+          <div class="footer-section">
+            <h3>Kartenvorbestellungen</h3>
+            <p>
+              Täglich ab 19:00 Uhr telefonisch unter<br />
+              <a href="tel:+4948529344">+49 4852 9344</a>
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Adresse</h3>
+            <address>
+              Posadowsky Straße 2a<br />
+              25541 Brunsbüttel
+            </address>
+          </div>
+
+          <div class="footer-section">
+            <h3>Kontakt</h3>
+            <p>
+              <strong>Telefon:</strong>
+              <a href="tel:+4948529344">+49 4852 9344</a><br />
+              <strong>E-Mail:</strong>
+              <a href="mailto:info@metropol-theater.sh"
+                >info@metropol-theater.sh</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <nav class="footer-links" aria-label="Footer-Navigation">
+            <ul class="footer-links-list">
+              <li>
+                <a
+                  class="footer-link"
+                  href="/impressum"
+                  title="Impressum und rechtliche Informationen"
+                  >Impressum</a
+                >
+              </li>
+              <li>
+                <a
+                  class="footer-link"
+                  href="/datenschutz"
+                  title="Datenschutzerklärung"
+                  >Datenschutz</a
+                >
+              </li>
+              <li>
+                <a
+                  class="footer-link"
+                  href="/kolophon"
+                  title="Technische Informationen"
+                  >Kolophon</a
+                >
+              </li>
+              <li>
+                <a
+                  class="footer-link"
+                  href="/zeitleiste"
+                  title="Geschichte des Kino Metropol"
+                  >Zeitleiste</a
+                >
+              </li>
+              <li>
+                <a
+                  class="footer-link"
+                  href="/www-dokumentation"
+                  title="Technische Dokumentation"
+                  >WWW-Dokumentation</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <p class="copyright">Metropol Theater 2025</p>
+        </div>
+      </div>
     </footer>
     <script>
       window.onerror = function (msg, url, lineNo, columnNo, error) {

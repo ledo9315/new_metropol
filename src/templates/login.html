@@ -1,21 +1,48 @@
 {% extends "layout.html" %} {% block content %}
 <div class="login-container">
-  <h1>Admin Login</h1>
-
-  {% if message %}
-  <p class="success-message">{{ message }}</p>
-  {% endif %} {% if error %}
-  <p class="error-message">{{ error }}</p>
+  {% if error %}
+  <div class="error-message" role="alert" aria-live="assertive">
+    {{ error }}
+  </div>
   {% endif %}
 
-  <form action="/admin/login-post" method="post">
-    <label for="username">Benutzername:</label>
-    <input type="text" id="username" name="username" />
+  <form action="/admin/login" method="post" aria-labelledby="login-heading">
+    <h2 id="login-heading">Admin-Anmeldung</h2>
 
-    <label for="password">Passwort:</label>
-    <input type="password" id="password" name="password" />
+    <div class="form-group">
+      <label for="username">Benutzername:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        aria-describedby="username-help"
+        autocomplete="username"
+      />
+      <small id="username-help" class="sr-only"
+        >Geben Sie Ihren Benutzernamen ein</small
+      >
+    </div>
 
-    <button type="submit">Einloggen</button>
+    <div class="form-group">
+      <label for="password">Passwort:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        aria-describedby="password-help"
+        autocomplete="current-password"
+      />
+      <small id="password-help" class="sr-only"
+        >Geben Sie Ihr Passwort ein</small
+      >
+    </div>
+
+    <button type="submit" aria-describedby="submit-help">Anmelden</button>
+    <small id="submit-help" class="sr-only"
+      >Klicken Sie hier, um sich anzumelden</small
+    >
   </form>
 </div>
 {% endblock %}

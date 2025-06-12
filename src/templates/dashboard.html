@@ -1,57 +1,92 @@
 {% extends "layout.html" %} {% block content %}
 <div class="dashboard">
   {% if message %}
-  <p class="success-message">{{ message }}</p>
+  <div class="success-message" role="alert" aria-live="polite">
+    {{ message }}
+  </div>
   {% endif %} {% if error %}
-  <p class="error-message">{{ error }}</p>
+  <div class="error-message" role="alert" aria-live="assertive">
+    {{ error }}
+  </div>
   {% endif %}
 
-  <h2>Admin Dashboard</h2>
+  <h1>Admin Dashboard</h1>
 
   {% if user %}
-  <div class="user-info">
+  <div class="user-info" role="banner" aria-label="Benutzerinformationen">
     <span>Willkommen, {{ user.username }}!</span>
-    <a href="/admin/logout">Ausloggen</a>
+    <a href="/admin/logout" aria-label="Vom Admin-Bereich abmelden"
+      >Ausloggen</a
+    >
   </div>
   {% endif %}
 
   <!-- Dashboard Statistics -->
-  <div class="dashboard-stats">
-    <div class="stat-card">
-      <h3>Filme</h3>
-      <p class="stat-number">{{ filmCount }}</p>
+  <section aria-labelledby="stats-heading">
+    <h2 id="stats-heading" class="sr-only">Statistiken</h2>
+    <div
+      class="dashboard-stats"
+      role="region"
+      aria-label="Dashboard-Statistiken"
+    >
+      <div class="stat-card">
+        <h3>Filme</h3>
+        <p class="stat-number" aria-label="{{ filmCount }} Filme insgesamt">
+          {{ filmCount }}
+        </p>
+      </div>
+      <div class="stat-card">
+        <h3>Vorstellungen</h3>
+        <p
+          class="stat-number"
+          aria-label="{{ showCount }} Vorstellungen insgesamt"
+        >
+          {{ showCount }}
+        </p>
+      </div>
     </div>
-    <div class="stat-card">
-      <h3>Vorstellungen</h3>
-      <p class="stat-number">{{ showCount }}</p>
-    </div>
-  </div>
+  </section>
 
   {% if action == "list" %}
-  <h3>Filme verwalten</h3>
-  <ul class="film-list">
-    {% for film in films %}
-    <li>
-      <div class="film-item">
-        <span class="film-title">{{ film.title }}</span>
-        <div class="film-actions">
-          <a href="/admin?action=edit&id={{ film.id }}" class="edit-link"
-            >Bearbeiten</a
+  <section aria-labelledby="film-list-heading">
+    <h2 id="film-list-heading">Filme verwalten</h2>
+    <ul class="film-list" role="list" aria-label="Liste aller Filme">
+      {% for film in films %}
+      <li role="listitem">
+        <div class="film-item">
+          <span class="film-title">{{ film.title }}</span>
+          <div
+            class="film-actions"
+            role="group"
+            aria-label="Aktionen für {{ film.title }}"
           >
-          <a href="/admin?action=delete&id={{ film.id }}" class="delete-link"
-            >Löschen</a
-          >
+            <a
+              href="/admin?action=edit&id={{ film.id }}"
+              class="edit-link"
+              aria-label="Film {{ film.title }} bearbeiten"
+              >Bearbeiten</a
+            >
+            <a
+              href="/admin?action=delete&id={{ film.id }}"
+              class="delete-link"
+              aria-label="Film {{ film.title }} löschen"
+              >Löschen</a
+            >
+          </div>
         </div>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
+      </li>
+      {% endfor %}
+    </ul>
 
-  <div class="btn-group btn-group-center">
-    <a href="/admin?action=create" class="btn btn-primary"
-      >Neuen Film erstellen</a
-    >
-  </div>
+    <div class="btn-group btn-group-center">
+      <a
+        href="/admin?action=create"
+        class="btn btn-primary"
+        aria-label="Neuen Film erstellen"
+        >Neuen Film erstellen</a
+      >
+    </div>
+  </section>
 
   {% elif action == "create" %}
   <form
@@ -59,8 +94,10 @@
     method="post"
     enctype="multipart/form-data"
     class="admin-form"
+    aria-labelledby="create-form-heading"
+    novalidate
   >
-    <h2>Neuen Film erstellen</h2>
+    <h2 id="create-form-heading">Neuen Film erstellen</h2>
 
     <div class="form-grid">
       <div class="form-group">
@@ -139,8 +176,8 @@
 
     <!-- Vorstellungen Section -->
     <div class="shows-section">
-      <h3>Vorstellungen hinzufügen</h3>
-      <div id="shows-container">
+      <h3 id="shows-legend">Vorstellungen hinzufügen</h3>
+      <div id="shows-container" role="group" aria-labelledby="shows-legend">
         {% if formData and formData.shows %} {% for show in formData.shows %}
         <div class="show-entry">
           <div class="show-entry-grid">
@@ -192,16 +229,36 @@
           type="button"
           class="btn btn-secondary"
           onclick="addShowField()"
+          aria-describedby="add-show-help"
         >
           Weitere Vorstellung hinzufügen
         </button>
+        <small id="add-show-help" class="sr-only"
+          >Klicken Sie hier, um eine weitere Vorstellung hinzuzufügen</small
+        >
       </div>
     </div>
 
-    <div class="btn-group btn-group-between">
-      <button class="btn btn-primary" type="submit">Film erstellen</button>
-      <a href="/admin?action=list" class="btn btn-secondary btn-w-full"
+    <div
+      class="btn-group btn-group-between"
+      role="group"
+      aria-label="Formular-Aktionen"
+    >
+      <button
+        class="btn btn-primary"
+        type="submit"
+        aria-describedby="submit-help"
+      >
+        Film erstellen
+      </button>
+      <a
+        href="/admin?action=list"
+        class="btn btn-secondary btn-w-full"
+        aria-label="Vorgang abbrechen und zur Filmliste zurückkehren"
         >Abbrechen</a
+      >
+      <small id="submit-help" class="sr-only"
+        >Film mit allen Daten speichern</small
       >
     </div>
   </form>
@@ -212,8 +269,10 @@
     method="post"
     enctype="multipart/form-data"
     class="admin-form"
+    aria-labelledby="edit-form-heading"
+    novalidate
   >
-    <h2>Film bearbeiten: {{ film.title }}</h2>
+    <h2 id="edit-form-heading">Film bearbeiten: {{ film.title }}</h2>
 
     <div class="form-grid">
       <div class="form-group">
@@ -294,8 +353,8 @@
 
     <!-- Vorstellungen Section -->
     <div class="shows-section">
-      <h3>Vorstellungen</h3>
-      <div id="shows-container">
+      <h3 id="shows-legend">Vorstellungen</h3>
+      <div id="shows-container" role="group" aria-labelledby="shows-legend">
         {% for show in film.shows %}
         <div class="show-entry">
           <input
@@ -337,14 +396,28 @@
           type="button"
           class="btn btn-secondary"
           onclick="addShowField()"
+          aria-describedby="add-show-help"
         >
           Weitere Vorstellung hinzufügen
         </button>
+        <small id="add-show-help" class="sr-only"
+          >Klicken Sie hier, um eine weitere Vorstellung hinzuzufügen</small
+        >
       </div>
     </div>
 
-    <div class="btn-group btn-group-between">
-      <button class="btn btn-primary" type="submit">Film aktualisieren</button>
+    <div
+      class="btn-group btn-group-between"
+      role="group"
+      aria-label="Formular-Aktionen"
+    >
+      <button
+        class="btn btn-primary"
+        type="submit"
+        aria-describedby="submit-help"
+      >
+        Film aktualisieren
+      </button>
       <a href="/admin?action=list" class="btn btn-secondary btn-w-full">
         Abbrechen
       </a>
@@ -352,9 +425,14 @@
   </form>
 
   {% elif action == "delete" and film %}
-  <div class="delete-confirmation">
-    <h2>Film löschen: {{ film.title }}</h2>
-    <div class="delete-warning">
+  <div
+    class="delete-confirmation"
+    role="dialog"
+    aria-labelledby="delete-heading"
+    aria-describedby="delete-warning"
+  >
+    <h2 id="delete-heading">Film löschen: {{ film.title }}</h2>
+    <div id="delete-warning" class="delete-warning" role="alert">
       <p>
         Möchten Sie den Film "{{ film.title }}" wirklich löschen?
         <strong
@@ -363,10 +441,26 @@
       </p>
     </div>
     <form action="/admin/films/delete/{{ film.id }}" method="post">
-      <div class="btn-group btn-group-center">
-        <button type="submit" class="btn btn-primary">Ja, löschen</button>
-        <a href="/admin?action=list" class="btn btn-secondary btn-w-full"
+      <div
+        class="btn-group btn-group-center"
+        role="group"
+        aria-label="Löschbestätigung"
+      >
+        <button
+          type="submit"
+          class="btn btn-primary"
+          aria-describedby="confirm-delete"
+        >
+          Ja, löschen
+        </button>
+        <a
+          href="/admin?action=list"
+          class="btn btn-secondary btn-w-full"
+          aria-label="Löschen abbrechen und zur Filmliste zurückkehren"
           >Abbrechen</a
+        >
+        <small id="confirm-delete" class="sr-only"
+          >Endgültiges Löschen bestätigen</small
         >
       </div>
     </form>

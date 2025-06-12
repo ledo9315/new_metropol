@@ -1,70 +1,97 @@
-{% extends "layout.html" %}
-
-{% block content %}
+{% extends "layout.html" %} {% block content %}
 
 <div class="dashboard">
-
-  <ul class="logoIndex">
-    {% for image in imagePaths %}
-      {% if image.id == 2 %}
-        <li><img src="{{ image.path }}" alt="Logo mit ID 2" /></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+  <section aria-labelledby="logo-heading">
+    <h2 id="logo-heading" class="sr-only">Kino Metropol</h2>
+    <ul class="logoIndex" role="img" aria-label="Kino Metropol Logo">
+      {% for image in imagePaths %} {% if image.id == 2 %}
+      <li><img src="{{ image.path }}" alt="Metropol Theater Logo" /></li>
+      {% endif %} {% endfor %}
+    </ul>
+  </section>
 
   <!-- Programm für Heute -->
-  <div class="tabs">
-    <strong>Heute</strong>
-  </div>
-  <hr>
-  <ul class="program-list">
-    {% if todayShows.length > 0 %}
-      {% for show in todayShows %}
-        <li>
-          <a href="/film/{{ show.film_id }}"><span>{{ show.film_title }}</span></a>
-          <span class="time">{{ show.time }} Uhr</span>
-        </li>
-      {% endfor %}
-    {% else %}
-      <li>Keine Vorstellungen für heute.</li>
-    {% endif %}
-  </ul>
+  <section aria-labelledby="heute-heading">
+    <div class="tabs">
+      <h2 id="heute-heading"><strong>Heute</strong></h2>
+    </div>
+    <hr role="separator" aria-hidden="true" />
+    <ul class="program-list" role="list" aria-label="Filmvorstellungen heute">
+      {% if todayShows.length > 0 %} {% for show in todayShows %}
+      <li role="listitem">
+        <a
+          href="/film/{{ show.film_id }}"
+          aria-label="Film {{ show.film_title }} um {{ show.time }} Uhr ansehen"
+        >
+          <span>{{ show.film_title }}</span>
+        </a>
+        <span class="time" aria-label="Vorstellungszeit"
+          >{{ show.time }} Uhr</span
+        >
+      </li>
+      {% endfor %} {% else %}
+      <li role="listitem" aria-live="polite">Keine Vorstellungen für heute.</li>
+      {% endif %}
+    </ul>
+  </section>
 
   <!-- Programm für Morgen -->
-  <div class="tabs">
-    <strong>Morgen</strong>
-  </div>
-  <hr>
-  <ul class="program-list">
-    {% if tomorrowShows.length > 0 %}
-      {% for show in tomorrowShows %}
-        <li>
-          <a href="/film/{{ show.film_id }}"><span>{{ show.film_title }}</span></a>
-          <span class="time">{{ show.time }} Uhr</span>
-        </li>
-      {% endfor %}
-    {% else %}
-      <li>Keine Vorstellungen für morgen.</li>
-    {% endif %}
-  </ul>
+  <section aria-labelledby="morgen-heading">
+    <div class="tabs">
+      <h2 id="morgen-heading"><strong>Morgen</strong></h2>
+    </div>
+    <hr role="separator" aria-hidden="true" />
+    <ul class="program-list" role="list" aria-label="Filmvorstellungen morgen">
+      {% if tomorrowShows.length > 0 %} {% for show in tomorrowShows %}
+      <li role="listitem">
+        <a
+          href="/film/{{ show.film_id }}"
+          aria-label="Film {{ show.film_title }} um {{ show.time }} Uhr ansehen"
+        >
+          <span>{{ show.film_title }}</span>
+        </a>
+        <span class="time" aria-label="Vorstellungszeit"
+          >{{ show.time }} Uhr</span
+        >
+      </li>
+      {% endfor %} {% else %}
+      <li role="listitem" aria-live="polite">
+        Keine Vorstellungen für morgen.
+      </li>
+      {% endif %}
+    </ul>
+  </section>
 
   <!-- Programm für Übermorgen -->
-  <div class="tabs">
-    <strong>Übermorgen</strong>
-  </div>
-  <hr>
-  <ul class="program-list">
-    {% if dayAfterTomorrowShows.length > 0 %}
-      {% for show in dayAfterTomorrowShows %}
-        <li>
-          <a href="/film/{{ show.film_id }}"><span>{{ show.film_title }}</span></a>
-          <span class="time">{{ show.time }} Uhr</span>
-        </li>
-      {% endfor %}
-    {% else %}
-      <li>Keine Vorstellungen für übermorgen.</li>
-    {% endif %}
-  </ul>
-
+  <section aria-labelledby="uebermorgen-heading">
+    <div class="tabs">
+      <h2 id="uebermorgen-heading"><strong>Übermorgen</strong></h2>
+    </div>
+    <hr role="separator" aria-hidden="true" />
+    <ul
+      class="program-list"
+      role="list"
+      aria-label="Filmvorstellungen übermorgen"
+    >
+      {% if dayAfterTomorrowShows.length > 0 %} {% for show in
+      dayAfterTomorrowShows %}
+      <li role="listitem">
+        <a
+          href="/film/{{ show.film_id }}"
+          aria-label="Film {{ show.film_title }} um {{ show.time }} Uhr ansehen"
+        >
+          <span>{{ show.film_title }}</span>
+        </a>
+        <span class="time" aria-label="Vorstellungszeit"
+          >{{ show.time }} Uhr</span
+        >
+      </li>
+      {% endfor %} {% else %}
+      <li role="listitem" aria-live="polite">
+        Keine Vorstellungen für übermorgen.
+      </li>
+      {% endif %}
+    </ul>
+  </section>
 </div>
 {% endblock %}

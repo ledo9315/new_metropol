@@ -1,30 +1,34 @@
-{% extends "layout.html" %}
-
-{% block content %}
-<div class="preise"> 
-  <div class="tabs">
-    <span><h2><strong>Preise</strong></h2></span>
-  </div>
-  <hr>
-  <ul class="price-list">
-    <li>
-      <span>Erwachsene</span>
-      <span class="price">10,00 €</span>
-    </li>
-    <li>
-      <span>Kinder (unter 12 Jahre)</span>
-      <span class="price">6,00 €</span>
-    </li>
-    <li>
-      <span>Studenten (mit Ausweis)</span>
-      <span class="price">8,00 €</span>
-    </li>
-    <li>
-      <span>Senioren (ab 65 Jahre)</span>
-      <span class="price">7,00 €</span>
-    </li>
-  </ul>
+{% extends "layout.html" %} {% block content %}
+<div class="preise">
+  <section aria-labelledby="preise-heading">
+    <div class="tabs">
+      <h1 id="preise-heading"><strong>Preise</strong></h1>
+    </div>
+    <hr role="separator" aria-hidden="true" />
+    <ul class="price-list" role="list" aria-label="Eintrittspreise">
+      <li role="listitem">
+        <span>Erwachsene</span>
+        <span class="price" aria-label="Preis für Erwachsene">10,00 €</span>
+      </li>
+      <li role="listitem">
+        <span>Kinder (unter 12 Jahre)</span>
+        <span class="price" aria-label="Preis für Kinder unter 12 Jahre"
+          >6,00 €</span
+        >
+      </li>
+      <li role="listitem">
+        <span>Studenten (mit Ausweis)</span>
+        <span class="price" aria-label="Preis für Studenten mit Ausweis"
+          >8,00 €</span
+        >
+      </li>
+      <li role="listitem">
+        <span>Senioren (ab 65 Jahre)</span>
+        <span class="price" aria-label="Preis für Senioren ab 65 Jahre"
+          >7,00 €</span
+        >
+      </li>
+    </ul>
+  </section>
 </div>
 {% endblock %}
-
-
