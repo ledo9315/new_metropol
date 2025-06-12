@@ -13,4 +13,3 @@ siteRoutes.get("/datenschutz", siteController.privacy);
 siteRoutes.get("/kolophon", siteController.kolophon);
 siteRoutes.get("/zeitleiste", siteController.timeline);
 siteRoutes.get("/www-dokumentation", siteController.documentation);
-siteRoutes.get("/frontend-dokumentation", siteController.documentation);

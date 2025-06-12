@@ -1,0 +1,30 @@
+{
+  "scriptId": "373",
+  "url": "file:///Users/leoniddomahalskyy/Desktop/new_metropol/src/models/userModel.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 706, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getUserByUsername",
+      "ranges": [
+        { "startOffset": 146, "endOffset": 337, "count": 2 },
+        { "startOffset": 315, "endOffset": 325, "count": 1 },
+        { "startOffset": 326, "endOffset": 332, "count": 1 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "createUser",
+      "ranges": [{ "startOffset": 342, "endOffset": 582, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "verifyPassword",
+      "ranges": [{ "startOffset": 587, "endOffset": 701, "count": 1 }],
+      "isBlockCoverage": true
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "scriptId": "337",
+  "url": "file:///Users/leoniddomahalskyy/Desktop/new_metropol/src/routes/siteRoutes.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 796, "count": 1 }],
+      "isBlockCoverage": true
+    }
+  ]
+}

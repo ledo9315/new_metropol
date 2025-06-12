@@ -1,0 +1,8 @@
+# robots.txt für Kino Metropol
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://localhost:8000/sitemap.xml 

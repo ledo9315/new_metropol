@@ -1,0 +1,36 @@
+{
+  "scriptId": "571",
+  "url": "file:///Users/leoniddomahalskyy/Library/Caches/deno/npm/registry.npmjs.org/asap/2.0.6/raw.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 4451, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 1, "endOffset": 4450, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 185, "endOffset": 4386, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "rawAsap",
+      "ranges": [{ "startOffset": 993, "endOffset": 1161, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "flush",
+      "ranges": [{ "startOffset": 2106, "endOffset": 3217, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "requestFlush",
+      "ranges": [{ "startOffset": 3256, "endOffset": 4383, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

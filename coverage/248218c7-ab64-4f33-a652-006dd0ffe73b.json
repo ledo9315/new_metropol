@@ -1,0 +1,62 @@
+{
+  "scriptId": "566",
+  "url": "file:///Users/leoniddomahalskyy/Library/Caches/deno/npm/registry.npmjs.org/a-sync-waterfall/1.0.1/index.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 2616, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 1, "endOffset": 2615, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 185, "endOffset": 2551, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        { "startOffset": 280, "endOffset": 2540, "count": 1 },
+        { "startOffset": 1186, "endOffset": 1290, "count": 0 },
+        { "startOffset": 2278, "endOffset": 2291, "count": 0 },
+        { "startOffset": 2293, "endOffset": 2372, "count": 0 },
+        { "startOffset": 2480, "endOffset": 2538, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "executeSync",
+      "ranges": [{ "startOffset": 337, "endOffset": 495, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "executeAsync",
+      "ranges": [{ "startOffset": 519, "endOffset": 747, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "makeIterator",
+      "ranges": [{ "startOffset": 771, "endOffset": 1150, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "_isArray",
+      "ranges": [{ "startOffset": 1189, "endOffset": 1290, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "waterfall",
+      "ranges": [{ "startOffset": 1311, "endOffset": 2239, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 2310, "endOffset": 2353, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { render } from "../services/render.js"; 
+import { render } from "../services/render.js";
 
 export async function errorMiddleware(ctx, next) {
   try {

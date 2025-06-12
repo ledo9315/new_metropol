@@ -1,0 +1,56 @@
+{
+  "scriptId": "561",
+  "url": "file:///Users/leoniddomahalskyy/Library/Caches/deno/npm/registry.npmjs.org/nunjucks/3.2.4/index.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 2621, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 1, "endOffset": 2620, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        { "startOffset": 185, "endOffset": 2556, "count": 1 },
+        { "startOffset": 2466, "endOffset": 2477, "count": 0 },
+        { "startOffset": 2540, "endOffset": 2551, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "configure",
+      "ranges": [
+        { "startOffset": 858, "endOffset": 1512, "count": 1 },
+        { "startOffset": 914, "endOffset": 919, "count": 0 },
+        { "startOffset": 956, "endOffset": 1013, "count": 0 },
+        { "startOffset": 1201, "endOffset": 1390, "count": 0 },
+        { "startOffset": 1464, "endOffset": 1498, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "reset",
+      "ranges": [{ "startOffset": 1953, "endOffset": 1994, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "compile",
+      "ranges": [{ "startOffset": 2007, "endOffset": 2153, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "render",
+      "ranges": [{ "startOffset": 2165, "endOffset": 2276, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "renderString",
+      "ranges": [{ "startOffset": 2294, "endOffset": 2415, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

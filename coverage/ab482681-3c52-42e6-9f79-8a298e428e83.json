@@ -1,0 +1,71 @@
+{
+  "scriptId": "401",
+  "url": "file:///Users/leoniddomahalskyy/Desktop/new_metropol/src/utils/sanitizer.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 8655, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "translateFieldName",
+      "ranges": [{ "startOffset": 1906, "endOffset": 1981, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "escapeHtml",
+      "ranges": [{ "startOffset": 1998, "endOffset": 2135, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "sanitizeString",
+      "ranges": [{ "startOffset": 2156, "endOffset": 2728, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "sanitizeInteger",
+      "ranges": [{ "startOffset": 2750, "endOffset": 3315, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "sanitizeFloat",
+      "ranges": [{ "startOffset": 3335, "endOffset": 3498, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "sanitizeEmail",
+      "ranges": [{ "startOffset": 3518, "endOffset": 3739, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "sanitizeUrl",
+      "ranges": [{ "startOffset": 3757, "endOffset": 3998, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "sanitizeDate",
+      "ranges": [{ "startOffset": 4017, "endOffset": 5002, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "sanitizeTime",
+      "ranges": [{ "startOffset": 5021, "endOffset": 5320, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "detectSqlInjection",
+      "ranges": [{ "startOffset": 5345, "endOffset": 5551, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "detectXss",
+      "ranges": [{ "startOffset": 5567, "endOffset": 5696, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "sanitizeFormData",
+      "ranges": [{ "startOffset": 5719, "endOffset": 8650, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

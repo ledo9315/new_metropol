@@ -1,0 +1,58 @@
+{
+  "scriptId": "337",
+  "url": "file:///Users/leoniddomahalskyy/Desktop/new_metropol/src/controllers/adminController.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 4026, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "dashboard",
+      "ranges": [{ "startOffset": 257, "endOffset": 1825, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "login",
+      "ranges": [{ "startOffset": 1837, "endOffset": 1977, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "loginPost",
+      "ranges": [
+        { "startOffset": 1993, "endOffset": 2887, "count": 5 },
+        { "startOffset": 2180, "endOffset": 2192, "count": 3 },
+        { "startOffset": 2194, "endOffset": 2322, "count": 3 },
+        { "startOffset": 2322, "endOffset": 2397, "count": 2 },
+        { "startOffset": 2397, "endOffset": 2714, "count": 1 },
+        { "startOffset": 2714, "endOffset": 2886, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "logout",
+      "ranges": [{ "startOffset": 2900, "endOffset": 3041, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "showsIndex",
+      "ranges": [{ "startOffset": 3058, "endOffset": 3152, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "showsCreate",
+      "ranges": [{ "startOffset": 3170, "endOffset": 3476, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "showsUpdate",
+      "ranges": [{ "startOffset": 3494, "endOffset": 3866, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "showsDelete",
+      "ranges": [{ "startOffset": 3884, "endOffset": 4021, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

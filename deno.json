@@ -1,0 +1,28 @@
+{
+  "tasks": {
+    "start": "denon run --allow-net --allow-write --allow-read --allow-env app.js",
+    "dev": "denon run --allow-net --allow-write --allow-read --allow-env --watch app.js",
+    "test:all": "denon test --allow-net --allow-write --allow-read --allow-env tests/",
+    "test:unit": "deno test --allow-net --allow-write --allow-read --allow-env tests/unit/",
+    "test:integration": "deno test --allow-net --allow-write --allow-read --allow-env tests/integration/",
+    "test:coverage": "deno test --allow-net --allow-write --allow-read --allow-env --coverage=coverage tests/",
+    "db:reset": "deno run --allow-read --allow-write --allow-env scripts/db-seed.js reset",
+    "db:seed": "deno run --allow-read --allow-write --allow-env scripts/db-seed.js seed",
+    "db:reset-and-seed": "deno run --allow-read --allow-write --allow-env scripts/db-seed.js reset-and-seed",
+    "db:full": "deno run --allow-read --allow-write --allow-env scripts/db-seed.js full",
+    "db:stats": "deno run --allow-read --allow-write --allow-env scripts/db-seed.js stats",
+    "db:schema": "deno run --allow-read --allow-write --allow-env scripts/db-seed.js schema"
+  },
+  "imports": {
+    "oak": "https://deno.land/x/oak@v12.6.1/mod.ts",
+    "oak-sessions": "https://deno.land/x/oak_sessions@v4.0.1/mod.ts",
+    "sqlite": "https://deno.land/x/sqlite@v3.9.1/mod.ts",
+    "@std/testing": "https://deno.land/std@0.208.0/testing/bdd.ts",
+    "@std/assert": "https://deno.land/std@0.208.0/assert/mod.ts",
+    "@std/fs": "https://deno.land/std@0.208.0/fs/mod.ts"
+  },
+  "compilerOptions": {
+    "lib": ["deno.window"],
+    "strict": true
+  }
+}

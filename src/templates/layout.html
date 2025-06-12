@@ -1,42 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="icon" type="image/png" href="/public/favicon.ico" />
-  <link href="/public/style.css" rel="stylesheet" />
-</head>
-<body>
-<header>
-  <div class="header-container">
-    <img class="logoTopnav" src="public/img/mtLogo.png" alt="mtLogo" />
-    <ul>
-      <li><a href="/">Start</a></li>
-      <li><a href="/programm">Programm</a></li>
-      <li><a href="/preise">Preise</a></li>
-      <li><a href="/ueberuns">Über uns</a></li>
-    </ul>
-  </div>
-</header>
-  <hr />
-  <main>
-    {% block content %}
-    {% endblock %}
-  </main>
-  <footer>
-    <p class="copyright">Metropol Theater 2025</p>
-    <nav class="footer-links">
-      <ul class="footer-links-list">
-        <li><a class="footer-link" href="/impressum">Impressum</a></li>
-        <li><a class="footer-link" href="/datenschutz">Datenschutz</a></li>
-        <li><a class="footer-link" href="/kolophon">Kolophon</a></li>
-        <li><a class="footer-link" href="/zeitleiste">Zeitleiste</a></li>
-        <li><a class="footer-link" href="/www-dokumentation">WWW-Dokumentation</a></li>
-        <li><a class="footer-link" href="/frontend-dokumentation">Frontend-Dokumentation</a></li>
-      </ul>
-    </nav>
-  </footer>
-  <script src="/public/script.js"></script>
-</body>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kino Metropol - Ihr Kino für Blockbuster und Independent-Filme in der Innenstadt"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';"
+    />
+    <meta
+      http-equiv="Strict-Transport-Security"
+      content="max-age=31536000; includeSubDomains; preload"
+    />
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin" />
+    <title>{% block title %}Kino Metropol{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="/public/favicon.ico" />
+    <link href="/public/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="/">
+          <img class="logoTopnav" src="/public/img/mtLogo.png" alt="mtLogo" />
+        </a>
+        <ul>
+          <li>
+            <a href="/" title="Zur Startseite des Kino Metropol">Startseite</a>
+          </li>
+          <li>
+            <a href="/programm" title="Aktuelles Kinoprogramm und Vorstellungen"
+              >Programm</a
+            >
+          </li>
+          <li>
+            <a href="/preise" title="Eintrittspreise und Ermäßigungen"
+              >Preise</a
+            >
+          </li>
+          <li>
+            <a href="/ueberuns" title="Informationen über das Kino Metropol"
+              >Über uns</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>{% block content %} {% endblock %}</main>
+    <footer>
+      <p class="copyright">Metropol Theater 2025</p>
+      <nav class="footer-links">
+        <ul class="footer-links-list">
+          <li>
+            <a
+              class="footer-link"
+              href="/impressum"
+              title="Impressum und rechtliche Informationen"
+              >Impressum</a
+            >
+          </li>
+          <li>
+            <a
+              class="footer-link"
+              href="/datenschutz"
+              title="Datenschutzerklärung"
+              >Datenschutz</a
+            >
+          </li>
+          <li>
+            <a
+              class="footer-link"
+              href="/kolophon"
+              title="Technische Informationen"
+              >Kolophon</a
+            >
+          </li>
+          <li>
+            <a
+              class="footer-link"
+              href="/zeitleiste"
+              title="Geschichte des Kino Metropol"
+              >Zeitleiste</a
+            >
+          </li>
+          <li>
+            <a
+              class="footer-link"
+              href="/www-dokumentation"
+              title="Technische Dokumentation"
+              >WWW-Dokumentation</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <script>
+      window.onerror = function (msg, url, lineNo, columnNo, error) {
+        console.error("JavaScript Fehler:", {
+          message: msg,
+          url: url,
+          line: lineNo,
+          column: columnNo,
+          error: error,
+        });
+        return false;
+      };
+    </script>
+    {% block scripts %}{% endblock %}
+  </body>
 </html>

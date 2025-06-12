@@ -1,0 +1,26 @@
+{
+  "scriptId": "577",
+  "url": "file:///Users/leoniddomahalskyy/Library/Caches/deno/npm/registry.npmjs.org/nunjucks/3.2.4/src/precompile-global.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 909, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 1, "endOffset": 908, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 185, "endOffset": 844, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "precompileGlobal",
+      "ranges": [{ "startOffset": 260, "endOffset": 807, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

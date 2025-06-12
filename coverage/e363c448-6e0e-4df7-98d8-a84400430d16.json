@@ -1,0 +1,71 @@
+{
+  "scriptId": "572",
+  "url": "file:///Users/leoniddomahalskyy/Library/Caches/deno/npm/registry.npmjs.org/nunjucks/3.2.4/src/transformer.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 5492, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 1, "endOffset": 5491, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 185, "endOffset": 5427, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "gensym",
+      "ranges": [{ "startOffset": 333, "endOffset": 380, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "mapCOW",
+      "ranges": [{ "startOffset": 414, "endOffset": 664, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "walk",
+      "ranges": [{ "startOffset": 665, "endOffset": 1921, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "depthWalk",
+      "ranges": [{ "startOffset": 1922, "endOffset": 1987, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "_liftFilters",
+      "ranges": [{ "startOffset": 1988, "endOffset": 2814, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "liftFilters",
+      "ranges": [{ "startOffset": 2815, "endOffset": 3441, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "liftSuper",
+      "ranges": [{ "startOffset": 3442, "endOffset": 4061, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "convertStatements",
+      "ranges": [{ "startOffset": 4062, "endOffset": 5005, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "cps",
+      "ranges": [{ "startOffset": 5006, "endOffset": 5112, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "transform",
+      "ranges": [{ "startOffset": 5113, "endOffset": 5193, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

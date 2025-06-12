@@ -1,156 +1,469 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "layout.html" %} {% block content %}
 <div class="dashboard">
   {% if message %}
-    <p class="success-message">{{ message }}</p>
-  {% endif %}
-  {% if error %}
-    <p class="error-message">{{ error }}</p>
+  <p class="success-message">{{ message }}</p>
+  {% endif %} {% if error %}
+  <p class="error-message">{{ error }}</p>
   {% endif %}
 
   <h2>Admin Dashboard</h2>
 
   {% if user %}
-        <div class="user-info">
-          <span>Willkommen, {{ user.username }}!</span>
-          <a href="/admin/logout">Ausloggen</a>
-        </div>
+  <div class="user-info">
+    <span>Willkommen, {{ user.username }}!</span>
+    <a href="/admin/logout">Ausloggen</a>
+  </div>
   {% endif %}
-  <a href="/admin?action=list">Dashboard</a>
-  <p>Anzahl Filme: {{ filmCount }}</p>
-  <p>Anzahl Vorstellungen: {{ showCount }}</p>
+
+  <!-- Dashboard Statistics -->
+  <div class="dashboard-stats">
+    <div class="stat-card">
+      <h3>Filme</h3>
+      <p class="stat-number">{{ filmCount }}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Vorstellungen</h3>
+      <p class="stat-number">{{ showCount }}</p>
+    </div>
+  </div>
 
   {% if action == "list" %}
-    <h3>Filme</h3>
-    <ul class="film-list">
-      {% for film in films %}
-        <li>
-          <span>{{ film.title }}</span>
-          <div class="actions">
-            <a href="/admin?action=edit&id={{ film.id }}">Bearbeiten</a>
-            <a href="/admin?action=delete&id={{ film.id }}">Löschen</a>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-    <a href="/admin?action=create">Neuen Film erstellen</a>
-
-  {% elif action == "create" %}
-    <h2>Neuen Film erstellen</h2>
-    <form action="/admin/films" method="post">
-      <label for="title">Titel:</label>
-      <input type="text" id="title" name="title">
-
-      <label for="director">Regisseur:</label>
-      <input type="text" id="director" name="director">
-
-      <label for="duration">Dauer (in Minuten):</label>
-      <input type="number" id="duration" name="duration">
-
-      <label for="description">Beschreibung:</label>
-      <textarea id="description" name="description"></textarea>
-
-      <label for="cast">Besetzung:</label>
-      <input type="text" id="cast" name="cast">
-
-      <label for="poster_url">Poster-URL:</label>
-      <input type="text" id="poster_url" name="poster_url">
-
-      <label for="release_date">Erscheinungsdatum (YYYY-MM-DD):</label>
-      <input type="text" id="release_date" name="release_date">
-
-      <!-- Felder für Vorstellungen -->
-      <h3>Vorstellungen hinzufügen</h3>
-      <div id="shows-container">
-        <div class="show-entry">
-          <label>Datum (YYYY-MM-DD):</label>
-          <input type="text" name="shows[0][date]" placeholder="z.B. 2025-03-20">
-          <label>Uhrzeit (HH:MM):</label>
-          <input type="text" name="shows[0][time]" placeholder="z.B. 20:00">
+  <h3>Filme verwalten</h3>
+  <ul class="film-list">
+    {% for film in films %}
+    <li>
+      <div class="film-item">
+        <span class="film-title">{{ film.title }}</span>
+        <div class="film-actions">
+          <a href="/admin?action=edit&id={{ film.id }}" class="edit-link"
+            >Bearbeiten</a
+          >
+          <a href="/admin?action=delete&id={{ film.id }}" class="delete-link"
+            >Löschen</a
+          >
         </div>
       </div>
-      <div class="add-show-buttons">
-        <button type="button" class="edit-form-button" onclick="addShowField()">Weitere Vorstellung hinzufügen</button>
-        <button class="edit-form-button" type="submit">Film erstellen</button>
-        <a href="/admin?action=list" class="cancel-button edit-form-button">Abbrechen</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <div class="btn-group btn-group-center">
+    <a href="/admin?action=create" class="btn btn-primary"
+      >Neuen Film erstellen</a
+    >
+  </div>
+
+  {% elif action == "create" %}
+  <form
+    action="/admin/films"
+    method="post"
+    enctype="multipart/form-data"
+    class="admin-form"
+  >
+    <h2>Neuen Film erstellen</h2>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="title">Titel:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value="{{ formData.title if formData else '' }}"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="director">Regisseur:</label>
+        <input
+          type="text"
+          id="director"
+          name="director"
+          value="{{ formData.director if formData else '' }}"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="duration">Dauer (in Minuten):</label>
+        <input
+          type="number"
+          id="duration"
+          name="duration"
+          value="{{ formData.duration if formData else '' }}"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="release_date">Erscheinungsjahr:</label>
+        <input
+          type="number"
+          id="release_date"
+          name="release_date"
+          value="{{ formData.release_date if formData else '' }}"
+          step="1"
+          placeholder="z.B. 2024"
+        />
+      </div>
+
+      <div class="form-group full-width">
+        <label for="description">Beschreibung:</label>
+        <textarea id="description" name="description">
+{{ formData.description if formData else '' }}</textarea
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="cast">Besetzung:</label>
+        <input
+          type="text"
+          id="cast"
+          name="cast"
+          value="{{ formData.cast if formData else '' }}"
+        />
+      </div>
+
+      <div class="form-group poster-upload-group">
+        <label for="poster_file">Poster hochladen:</label>
+        <input
+          type="file"
+          id="poster_file"
+          name="poster_file"
+          accept="image/*"
+          class="file-input"
+        />
+        <small class="file-help"
+          >Unterstützte Formate: JPG, PNG, WebP (max. 5MB)</small
+        >
+      </div>
     </div>
-    </form>
+
+    <!-- Vorstellungen Section -->
+    <div class="shows-section">
+      <h3>Vorstellungen hinzufügen</h3>
+      <div id="shows-container">
+        {% if formData and formData.shows %} {% for show in formData.shows %}
+        <div class="show-entry">
+          <div class="show-entry-grid">
+            <div class="form-group">
+              <label>Datum:</label>
+              <input
+                type="date"
+                name="shows[{{ loop.index0 }}][date]"
+                value="{{ show.date if show.date else '' }}"
+              />
+            </div>
+            <div class="form-group">
+              <label>Uhrzeit:</label>
+              <input
+                type="time"
+                name="shows[{{ loop.index0 }}][time]"
+                value="{{ show.time if show.time else '' }}"
+              />
+            </div>
+            {% if loop.index0 > 0 %}
+            <button
+              type="button"
+              class="delete-link"
+              onclick="removeShowField(this)"
+            >
+              Entfernen
+            </button>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %} {% else %}
+        <div class="show-entry">
+          <div class="show-entry-grid">
+            <div class="form-group">
+              <label>Datum:</label>
+              <input type="date" name="shows[0][date]" />
+            </div>
+            <div class="form-group">
+              <label>Uhrzeit:</label>
+              <input type="time" name="shows[0][time]" />
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+      <div class="add-show-section">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          onclick="addShowField()"
+        >
+          Weitere Vorstellung hinzufügen
+        </button>
+      </div>
+    </div>
+
+    <div class="btn-group btn-group-between">
+      <button class="btn btn-primary" type="submit">Film erstellen</button>
+      <a href="/admin?action=list" class="btn btn-secondary btn-w-full"
+        >Abbrechen</a
+      >
+    </div>
+  </form>
 
   {% elif action == "edit" and film %}
+  <form
+    action="/admin/films/update/{{ film.id }}"
+    method="post"
+    enctype="multipart/form-data"
+    class="admin-form"
+  >
     <h2>Film bearbeiten: {{ film.title }}</h2>
-    <form action="/admin/films/update/{{ film.id }}" method="post">
-      <label for="title">Titel:</label>
-      <input type="text" id="title" name="title" value="{{ film.title }}" >
 
-      <label for="director">Regisseur:</label>
-      <input type="text" id="director" name="director" value="{{ film.director }}">
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="title">Titel:</label>
+        <input type="text" id="title" name="title" value="{{ film.title }}" />
+      </div>
 
-      <label for="duration">Dauer (in Minuten):</label>
-      <input type="number" id="duration" name="duration" value="{{ film.duration }}">
+      <div class="form-group">
+        <label for="director">Regisseur:</label>
+        <input
+          type="text"
+          id="director"
+          name="director"
+          value="{{ film.director }}"
+        />
+      </div>
 
-      <label for="description">Beschreibung:</label>
-      <textarea id="description" name="description">{{ film.description }}</textarea>
+      <div class="form-group">
+        <label for="duration">Dauer (in Minuten):</label>
+        <input
+          type="number"
+          id="duration"
+          name="duration"
+          value="{{ film.duration }}"
+        />
+      </div>
 
-      <label for="cast">Besetzung:</label>
-      <input type="text" id="cast" name="cast" value="{{ film.cast }}">
+      <div class="form-group">
+        <label for="release_date">Erscheinungsjahr:</label>
+        <input
+          type="number"
+          id="release_date"
+          name="release_date"
+          value="{{ film.release_date }}"
+          step="1"
+          placeholder="z.B. 2024"
+        />
+      </div>
 
-      <label for="poster_url">Poster-URL:</label>
-      <input type="text" id="poster_url" name="poster_url" value="{{ film.poster_url }}">
+      <div class="form-group full-width">
+        <label for="description">Beschreibung:</label>
+        <textarea id="description" name="description">
+          {{ film.description }}</textarea
+        >
+      </div>
 
-      <label for="release_date">Erscheinungsdatum (YYYY-MM-DD):</label>
-      <input type="text" id="release_date" name="release_date" value="{{ film.release_date }}">
+      <div class="form-group">
+        <label for="cast">Besetzung:</label>
+        <input type="text" id="cast" name="cast" value="{{ film.cast }}" />
+      </div>
 
-      <!-- Felder für Vorstellungen -->
+      <div class="form-group poster-section">
+        {% if film.poster_url %}
+        <label>Aktuelles Poster:</label>
+        <div class="current-poster">
+          <img
+            src="{{ film.poster_url }}"
+            alt="{{ film.title }}"
+            class="poster-preview"
+          />
+        </div>
+        {% endif %}
+
+        <label for="poster_file">Neues Poster hochladen:</label>
+        <input
+          type="file"
+          id="poster_file"
+          name="poster_file"
+          accept="image/*"
+          class="file-input"
+        />
+        <small class="file-help"
+          >Lassen Sie dieses Feld leer, um das aktuelle Poster zu behalten.
+          Unterstützte Formate: JPG, PNG, WebP (max. 5MB)</small
+        >
+      </div>
+    </div>
+
+    <!-- Vorstellungen Section -->
+    <div class="shows-section">
       <h3>Vorstellungen</h3>
       <div id="shows-container">
         {% for show in film.shows %}
-          <div class="show-entry">
-            <input type="hidden" name="shows[{{ loop.index0 }}][id]" value="{{ show.id }}">
-            <label>Datum (YYYY-MM-DD):</label>
-            <input type="text" name="shows[{{ loop.index0 }}][date]" value="{{ show.date }}" placeholder="z.B. 2025-03-20">
-            <label>Uhrzeit (HH:MM):</label>
-            <input type="text" name="shows[{{ loop.index0 }}][time]" value="{{ show.time }}" placeholder="z.B. 20:00">
-            <button type="button" onclick="removeShowField(this)">Entfernen</button>
+        <div class="show-entry">
+          <input
+            type="hidden"
+            name="shows[{{ loop.index0 }}][id]"
+            value="{{ show.id }}"
+          />
+          <div class="show-entry-grid">
+            <div class="form-group">
+              <label>Datum:</label>
+              <input
+                type="date"
+                name="shows[{{ loop.index0 }}][date]"
+                value="{{ show.date }}"
+              />
+            </div>
+            <div class="form-group">
+              <label>Uhrzeit:</label>
+              <input
+                type="time"
+                name="shows[{{ loop.index0 }}][time]"
+                value="{{ show.time }}"
+              />
+            </div>
+            <button
+              type="button"
+              class="delete-link"
+              onclick="removeShowField(this)"
+            >
+              Entfernen
+            </button>
           </div>
+        </div>
         {% endfor %}
       </div>
-      <div class="add-show-buttons">
-        <button class="edit-form-button" type="button" onclick="addShowField()">Weitere Vorstellung hinzufügen</button>
-        <button class="edit-form-button" type="submit">Film aktualisieren</button>
-        <a href="/admin?action=list" class="cancel-button edit-form-button">Abbrechen</a>
+
+      <div class="add-show-section">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          onclick="addShowField()"
+        >
+          Weitere Vorstellung hinzufügen
+        </button>
+      </div>
     </div>
-    </form>
+
+    <div class="btn-group btn-group-between">
+      <button class="btn btn-primary" type="submit">Film aktualisieren</button>
+      <a href="/admin?action=list" class="btn btn-secondary btn-w-full">
+        Abbrechen
+      </a>
+    </div>
+  </form>
 
   {% elif action == "delete" and film %}
+  <div class="delete-confirmation">
     <h2>Film löschen: {{ film.title }}</h2>
-    <p>Möchten Sie den Film "{{ film.title }}" wirklich löschen? <strong>Alle zugehörigen Vorstellungen werden ebenfalls gelöscht.</strong></p>
+    <div class="delete-warning">
+      <p>
+        Möchten Sie den Film "{{ film.title }}" wirklich löschen?
+        <strong
+          >Alle zugehörigen Vorstellungen werden ebenfalls gelöscht.</strong
+        >
+      </p>
+    </div>
     <form action="/admin/films/delete/{{ film.id }}" method="post">
-      <button type="submit" class="delete-button">Ja, löschen</button>
-      <a href="/admin?action=list" class="cancel-button">Abbrechen</a>
+      <div class="btn-group btn-group-center">
+        <button type="submit" class="btn btn-primary">Ja, löschen</button>
+        <a href="/admin?action=list" class="btn btn-secondary btn-w-full"
+          >Abbrechen</a
+        >
+      </div>
     </form>
+  </div>
   {% endif %}
 </div>
 
 <script>
-  let showIndex = document.querySelectorAll("#shows-container .show-entry").length;
+  let showIndex = document.querySelectorAll(
+    "#shows-container .show-entry"
+  ).length;
 
   function addShowField() {
     const container = document.getElementById("shows-container");
     const newShow = document.createElement("div");
     newShow.className = "show-entry";
     newShow.innerHTML = `
-      <label>Datum (YYYY-MM-DD):</label>
-      <input type="text" name="shows[${showIndex}][date]" placeholder="z.B. 2025-03-20">
-      <label>Uhrzeit (HH:MM):</label>
-      <input type="text" name="shows[${showIndex}][time]" placeholder="z.B. 20:00">
-      <button type="button" onclick="removeShowField(this)">Entfernen</button>
+      <div class="show-entry-grid">
+        <div class="form-group">
+          <label>Datum:</label>
+          <input type="date" name="shows[${showIndex}][date]" >
+        </div>
+        <div class="form-group">
+          <label>Uhrzeit:</label>
+          <input type="time" name="shows[${showIndex}][time]" >
+        </div>
+        <button type="button" class="delete-link" onclick="removeShowField(this)">Entfernen</button>
+      </div>
     `;
     container.appendChild(newShow);
     showIndex++;
   }
 
   function removeShowField(button) {
-    button.parentElement.remove();
+    button.closest(".show-entry").remove();
+  }
+
+  // File Upload Enhancement
+  document.addEventListener("DOMContentLoaded", function () {
+    const fileInputs = document.querySelectorAll(".file-input");
+
+    fileInputs.forEach((input) => {
+      input.addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        if (file) {
+          // Datei-Validierung
+          const validTypes = [
+            "image/jpeg",
+            "image/jpg",
+            "image/png",
+            "image/webp",
+          ];
+          const maxSize = 5 * 1024 * 1024; // 5MB
+
+          if (!validTypes.includes(file.type)) {
+            alert(
+              "Ungültiger Dateityp. Bitte wählen Sie eine JPG, PNG oder WebP Datei."
+            );
+            e.target.value = "";
+            return;
+          }
+
+          if (file.size > maxSize) {
+            alert("Datei zu groß. Maximum: 5MB");
+            e.target.value = "";
+            return;
+          }
+
+          // Vorschau erstellen
+          createPreview(file, e.target);
+        }
+      });
+    });
+  });
+
+  function createPreview(file, input) {
+    // Vorherige Vorschau entfernen
+    const existingPreview = input.parentNode.querySelector(".upload-preview");
+    if (existingPreview) {
+      existingPreview.remove();
+    }
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const preview = document.createElement("div");
+      preview.className = "upload-preview";
+      preview.innerHTML = `
+        <img src="${
+          e.target.result
+        }" alt="Vorschau" style="max-width: 150px; max-height: 200px; margin-top: 10px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <p style="font-size: 0.8rem; color: #666; margin: 5px 0 0 0;">${
+          file.name
+        } (${(file.size / 1024 / 1024).toFixed(1)} MB)</p>
+      `;
+      input.parentNode.appendChild(preview);
+    };
+    reader.readAsDataURL(file);
   }
 </script>
 {% endblock %}

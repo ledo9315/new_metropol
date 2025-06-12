@@ -1,185 +1,256 @@
-{% extends "./layout.html" %}
-{% block content %}
+{% extends "./layout.html" %} {% block content %}
 <div class="timeline">
-  <h1>Zeitleiste</h1>
-  <ul>
-    <li>
-      <h2>Dezember 2024</h2>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/bilder_styletile/styletile1.png"
-            alt="Screenshot von Styletile 1"
-          />
-        </a>
-        <figcaption>Styletile 1</figcaption>
-      </figure>
-    </li>
+  <h1>Projektverlauf - Metropol Theater</h1>
+  <p class="timeline-intro">
+    Eine chronologische Dokumentation der Entwicklung unserer
+    Cinema-Management-Anwendung von den ersten Design-Entwürfen bis zur
+    production-ready Implementierung.
+  </p>
 
-    <li>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/bilder_styletile/styletile2.png"
-            alt="Screenshot von Styletile 2"
-          />
-        </a>
-        <figcaption>Styletile 2</figcaption>
-      </figure>
-    </li>
+  <section>
+    <h1>Phase 1: Konzeption & Design (Dezember 2024)</h1>
+    <p>
+      <strong>Ziel:</strong> Grundlegende Designrichtung und Benutzerführung
+      festlegen
+    </p>
 
-    <li>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/bilder_styletile/styletile3.png"
-            alt="Screenshot von Styletile 3"
-          />
-        </a>
-        <figcaption>Styletile 3</figcaption>
-      </figure>
-    </li>
+    <figure>
+      <img
+        class="timeline-image"
+        src="/public/img/bilder_styletile/styletile1.png"
+        alt="Erster Styletile-Entwurf mit Farbschema und Typografie"
+      />
+      <figcaption>
+        Styletile 1 - Erste Farbpalette und Typografie-Experimente
+      </figcaption>
+    </figure>
 
-    <li>
-      <h2>17. Januar 2025</h2>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/zeitleiste_fotos/foto1.jpg"
-            alt="Screenshot von Arbeit am Programmaufbau"
-          />
-        </a>
-        <figcaption>Arbeit am Programmaufbau</figcaption>
-      </figure>
-    </li>
+    <figure>
+      <img
+        class="timeline-image"
+        src="/public/img/bilder_styletile/styletile2.png"
+        alt="Zweiter Styletile mit überarbeiteten Designelementen"
+      />
+      <figcaption>
+        Styletile 2 - Verfeinerte Designsprache mit Fokus auf Lesbarkeit
+      </figcaption>
+    </figure>
 
-    <li>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/zeitleiste_fotos/foto2.jpg"
-            alt="Screenshot von Herumtüfteln mit Grid, Farbe hinzufügen und Schrift einbetten"
-          />
-        </a>
-        <figcaption>
-          Herumtüfteln mit Grid, Farbe hinzufügen, Schrift einbetten
-        </figcaption>
-      </figure>
-    </li>
+    <figure>
+      <img
+        class="timeline-image"
+        src="/public/img/bilder_styletile/styletile3.png"
+        alt="Finaler Styletile mit endgültiger Designrichtung"
+      />
+      <figcaption>
+        Styletile 3 - Finale Designrichtung für das Kino-Theme
+      </figcaption>
+    </figure>
 
-    <li>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/zeitleiste_fotos/foto3.jpg"
-            alt="Screenshot des Rohtextes für 'Über Uns'"
-          />
-        </a>
-        <figcaption>Der "Über Uns"-Text roh.</figcaption>
-      </figure>
-    </li>
+    <h2>Erreichte Meilensteine</h2>
+    <ul>
+      <li>Einheitliche Designsprache definiert</li>
+      <li>Responsive Design-Prinzipien festgelegt</li>
+      <li>Barrierefreie Farbkontraste gewählt</li>
+      <li>Kino-spezifische UI-Elemente entwickelt</li>
+    </ul>
+  </section>
 
-    <li>
-      <h2>18. Januar 2025</h2>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/zeitleiste_fotos/foto4.jpg"
-            alt="Screenshot von Formatierung des Textes und Ausprobieren von Grid und Flexbox"
-          />
-        </a>
-        <figcaption>
-          Formatierung des Textes bearbeiten, Grid ausprobieren, Flexbox ausprobieren
-        </figcaption>
-      </figure>
-    </li>
+  <section>
+    <h1>Phase 2: Frontend-Entwicklung (Januar 2025)</h1>
+    <p>
+      <strong>Ziel:</strong> Responsive HTML/CSS-Layout mit progressiver
+      Verbesserung
+    </p>
 
-    <li>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/zeitleiste_fotos/foto5.jpg"
-            alt="Screenshot von weiterem Arbeiten am Textaufbau"
-          />
-        </a>
-        <figcaption>Weiter am Aufbau des Textes arbeiten.</figcaption>
-      </figure>
-    </li>
+    <h2>17. Januar 2025</h2>
+    <figure>
+      <img
+        class="timeline-image"
+        src="/public/img/zeitleiste_fotos/foto1.jpg"
+        alt="Grundgerüst der Programmübersicht"
+      />
+      <figcaption>Programmübersicht - Grid-Layout Grundgerüst</figcaption>
+    </figure>
 
-    <li>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/zeitleiste_fotos/foto6.jpg"
-            alt="Screenshot von der Erstellung des Programm-Grids"
-          />
-        </a>
-        <figcaption>Programm-Grid bauen.</figcaption>
-      </figure>
-    </li>
+    <figure>
+      <img
+        class="timeline-image"
+        src="/public/img/zeitleiste_fotos/foto2.jpg"
+        alt="CSS Grid und Flexbox Experimente"
+      />
+      <figcaption>
+        CSS Grid & Flexbox Integration, Google Fonts Einbindung
+      </figcaption>
+    </figure>
 
-    <li>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/zeitleiste_fotos/foto7.jpg"
-            alt="Screenshot von einem weiteren Teil des Projekts"
-          />
-        </a>
-      </figure>
-    </li>
+    <figure>
+      <img
+        class="timeline-image"
+        src="/public/img/zeitleiste_fotos/foto3.jpg"
+        alt="Rohtext der Über-Uns Seite"
+      />
+      <figcaption>Content-Struktur für "Über Uns" - Semantic HTML</figcaption>
+    </figure>
 
-    <li>
-      <h2>19. Januar 2025</h2>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/zeitleiste_fotos/foto8.jpg"
-            alt="Screenshot vom ersten Aufbau der Detailseite"
-          />
-        </a>
-        <figcaption>Detailseite - erster Aufbau</figcaption>
-      </figure>
-    </li>
+    <h2>18. Januar 2025</h2>
+    <figure>
+      <img
+        class="timeline-image"
+        src="/public/img/zeitleiste_fotos/foto4.jpg"
+        alt="Typografie und Layout-Verfeinerungen"
+      />
+      <figcaption>
+        Typografie-System und responsive Layout-Optimierung
+      </figcaption>
+    </figure>
 
-    <li>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/zeitleiste_fotos/foto9.jpg"
-            alt="Screenshot vom Verschieben des Logos und Arbeiten an der Detailseite"
-          />
-        </a>
-        <figcaption>
-          Logo verschieben, weiter am Aufbau der Detailseite arbeiten
-        </figcaption>
-      </figure>
-    </li>
+    <figure>
+      <img
+        class="timeline-image"
+        src="/public/img/zeitleiste_fotos/foto5.jpg"
+        alt="Content-Strukturierung"
+      />
+      <figcaption>Content-Hierarchie und Whitespace-Management</figcaption>
+    </figure>
 
-    <li>
-      <figure>
-        <a>
-          <img
-            class="screen"
-            src="/public/img/zeitleiste_fotos/foto10.jpg"
-            alt="Screenshot der Detailseite mit Media Query Entwurf"
-          />
-        </a>
-        <figcaption>Detailseite mit Media Query Entwurf</figcaption>
-      </figure>
-    </li>
-  </ul>
+    <figure>
+      <img
+        class="timeline-image"
+        src="/public/img/zeitleiste_fotos/foto6.jpg"
+        alt="Programm-Grid Entwicklung"
+      />
+      <figcaption>
+        Programm-Grid mit CSS Grid - Mobile-First Approach
+      </figcaption>
+    </figure>
+
+    <h2>19. Januar 2025</h2>
+    <figure>
+      <img
+        class="timeline-image"
+        src="/public/img/zeitleiste_fotos/foto8.jpg"
+        alt="Film-Detailseite Prototyp"
+      />
+      <figcaption>
+        Film-Detailseite - Erste responsive Implementation
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img
+        class="timeline-image"
+        src="/public/img/zeitleiste_fotos/foto9.jpg"
+        alt="Navigation und Logo-Optimierung"
+      />
+      <figcaption>Header-Navigation und Logo-Positionierung</figcaption>
+    </figure>
+
+    <figure>
+      <img
+        class="timeline-image"
+        src="/public/img/zeitleiste_fotos/foto10.jpg"
+        alt="Media Queries und responsive Design"
+      />
+      <figcaption>Media Queries für Tablet und Desktop-Ansichten</figcaption>
+    </figure>
+
+    <h2>Erreichte Meilensteine</h2>
+    <ul>
+      <li>Vollständig responsive HTML/CSS-Framework</li>
+      <li>Progressive Enhancement implementiert</li>
+      <li>Barrierefreie Navigation entwickelt</li>
+      <li>Mobile-First CSS-Architektur etabliert</li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>Phase 3: Backend-Architektur (Februar 2025)</h1>
+    <p>
+      <strong>Ziel:</strong> Sichere MVC-Architektur mit Deno und Oak Framework
+    </p>
+
+    <h2>Implementierte Features</h2>
+    <ul>
+      <li>Deno + Oak Framework Setup</li>
+      <li>MVC-Architektur (Model-View-Controller)</li>
+      <li>SQLite Datenbank mit Schema-Design</li>
+      <li>Session-Management mit Oak Sessions</li>
+      <li>Template-Engine (Nunjucks) Integration</li>
+      <li>Static File Middleware</li>
+      <li>Routing-System für öffentliche und Admin-Bereiche</li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>Phase 4: Sicherheits-Implementation (März 2025)</h1>
+    <p>
+      <strong>Ziel:</strong> Production-ready Sicherheitsstandards
+      implementieren
+    </p>
+
+    <h2>Sicherheitsmaßnahmen</h2>
+    <ul>
+      <li>
+        <strong>Input Sanitization:</strong> Umfassende Validierung aller
+        Eingaben
+      </li>
+      <li>
+        <strong>SQL Injection Schutz:</strong> Prepared Statements und
+        Pattern-Erkennung
+      </li>
+      <li>
+        <strong>XSS Protection:</strong> Multi-Pattern Erkennung und
+        HTML-Entity-Encoding
+      </li>
+      <li>
+        <strong>CSRF Protection:</strong> Token-basierte Formular-Sicherheit
+      </li>
+      <li><strong>Password Security:</strong> bcrypt Hashing mit Salt</li>
+      <li>
+        <strong>Rate Limiting:</strong> Schutz vor automatisierten Angriffen
+      </li>
+      <li><strong>Security Headers:</strong> CSP, HSTS, X-Frame-Options</li>
+      <li>
+        <strong>Session Security:</strong> Sichere Session-Verwaltung mit
+        Timeout
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>Phase 5: Qualitätssicherung (April 2025)</h1>
+    <p>
+      <strong>Ziel:</strong> Umfassende Test-Suite und Code-Qualität
+      sicherstellen
+    </p>
+
+    <h2>Test-Implementation</h2>
+    <ul>
+      <li>
+        <strong>Unit Tests:</strong> Sanitizer, Database, Models, Validation
+      </li>
+      <li>
+        <strong>Integration Tests:</strong> Controller, Security, Sessions,
+        File-Upload
+      </li>
+      <li>
+        <strong>Security Tests:</strong> SQL-Injection, XSS-Prevention,
+        Authentication
+      </li>
+      <li><strong>Code Coverage:</strong> Über 65% Test-Abdeckung erreicht</li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>Phase 6: File Upload & Media Management (April 2025)</h1>
+    <p><strong>Ziel:</strong> Sichere Poster-Upload-Funktionalität</p>
+
+    <h2>Implementierte Features</h2>
+    <ul>
+      <li>Multipart FormData Parser für Oak v12.6.1</li>
+      <li>Sichere Datei-Validierung (Typ, Größe, Format)</li>
+    </ul>
+  </section>
 </div>
 {% endblock %}

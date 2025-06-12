@@ -1,0 +1,100 @@
+{
+  "scriptId": "334",
+  "url": "file:///Users/leoniddomahalskyy/Desktop/new_metropol/tests/utils/testHelpers.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 6020, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "TestDatabase",
+      "ranges": [{ "startOffset": 278, "endOffset": 443, "count": 4 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "setupSchema",
+      "ranges": [{ "startOffset": 447, "endOffset": 1423, "count": 4 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "seedData",
+      "ranges": [{ "startOffset": 1427, "endOffset": 2075, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "close",
+      "ranges": [{ "startOffset": 2079, "endOffset": 2113, "count": 4 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "query",
+      "ranges": [
+        { "startOffset": 2117, "endOffset": 2305, "count": 4171 },
+        { "startOffset": 2200, "endOffset": 2301, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "safeQuery",
+      "ranges": [{ "startOffset": 2369, "endOffset": 2438, "count": 4171 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "safeQueryEntries",
+      "ranges": [
+        { "startOffset": 2442, "endOffset": 2648, "count": 1162 },
+        { "startOffset": 2543, "endOffset": 2644, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "internalQuery",
+      "ranges": [{ "startOffset": 2652, "endOffset": 2725, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "internalQueryEntries",
+      "ranges": [{ "startOffset": 2729, "endOffset": 2820, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "transaction",
+      "ranges": [
+        { "startOffset": 2824, "endOffset": 3070, "count": 2151 },
+        { "startOffset": 2993, "endOffset": 3066, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "get lastInsertId",
+      "ranges": [{ "startOffset": 3074, "endOffset": 3134, "count": 1020 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "createTestApp",
+      "ranges": [{ "startOffset": 3145, "endOffset": 3257, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "createMockContext",
+      "ranges": [{ "startOffset": 3266, "endOffset": 4099, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "createFormData",
+      "ranges": [{ "startOffset": 4108, "endOffset": 4626, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "createURLSearchParams",
+      "ranges": [{ "startOffset": 4713, "endOffset": 4968, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "sleep",
+      "ranges": [{ "startOffset": 5937, "endOffset": 6019, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

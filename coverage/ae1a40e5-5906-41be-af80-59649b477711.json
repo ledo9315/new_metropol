@@ -1,0 +1,329 @@
+{
+  "scriptId": "568",
+  "url": "file:///Users/leoniddomahalskyy/Library/Caches/deno/npm/registry.npmjs.org/nunjucks/3.2.4/src/parser.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 35787, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 1, "endOffset": 35786, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 185, "endOffset": 35722, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "_inheritsLoose",
+      "ranges": [{ "startOffset": 260, "endOffset": 449, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "_setPrototypeOf",
+      "ranges": [
+        { "startOffset": 450, "endOffset": 650, "count": 1 },
+        { "startOffset": 554, "endOffset": 617, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "_setPrototypeOf",
+      "ranges": [{ "startOffset": 556, "endOffset": 617, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 804, "endOffset": 35073, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "Parser",
+      "ranges": [{ "startOffset": 856, "endOffset": 927, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "init",
+      "ranges": [{ "startOffset": 977, "endOffset": 1151, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "nextToken",
+      "ranges": [{ "startOffset": 1174, "endOffset": 1648, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "peekToken",
+      "ranges": [{ "startOffset": 1671, "endOffset": 1772, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "pushToken",
+      "ranges": [{ "startOffset": 1795, "endOffset": 1954, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "error",
+      "ranges": [{ "startOffset": 1973, "endOffset": 2332, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "fail",
+      "ranges": [{ "startOffset": 2350, "endOffset": 2431, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "skip",
+      "ranges": [{ "startOffset": 2449, "endOffset": 2613, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "expect",
+      "ranges": [{ "startOffset": 2633, "endOffset": 2825, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "skipValue",
+      "ranges": [{ "startOffset": 2848, "endOffset": 3043, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "skipSymbol",
+      "ranges": [{ "startOffset": 3067, "endOffset": 3149, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "advanceAfterBlockEnd",
+      "ranges": [{ "startOffset": 3183, "endOffset": 3825, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "advanceAfterVariableEnd",
+      "ranges": [{ "startOffset": 3862, "endOffset": 4200, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseFor",
+      "ranges": [{ "startOffset": 4222, "endOffset": 5765, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseMacro",
+      "ranges": [{ "startOffset": 5789, "endOffset": 6234, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseCall",
+      "ranges": [{ "startOffset": 6257, "endOffset": 7357, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseWithContext",
+      "ranges": [{ "startOffset": 7387, "endOffset": 7822, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseImport",
+      "ranges": [{ "startOffset": 7847, "endOffset": 8466, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseFrom",
+      "ranges": [{ "startOffset": 8489, "endOffset": 10204, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseBlock",
+      "ranges": [{ "startOffset": 10228, "endOffset": 10968, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseExtends",
+      "ranges": [{ "startOffset": 10994, "endOffset": 11345, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseInclude",
+      "ranges": [{ "startOffset": 11371, "endOffset": 11824, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseIf",
+      "ranges": [{ "startOffset": 11845, "endOffset": 12942, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseSet",
+      "ranges": [{ "startOffset": 12964, "endOffset": 13845, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseSwitch",
+      "ranges": [{ "startOffset": 13870, "endOffset": 16052, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseStatement",
+      "ranges": [{ "startOffset": 16080, "endOffset": 17646, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseRaw",
+      "ranges": [{ "startOffset": 17668, "endOffset": 18961, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parsePostfix",
+      "ranges": [{ "startOffset": 18987, "endOffset": 20167, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseExpression",
+      "ranges": [{ "startOffset": 20196, "endOffset": 20282, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseInlineIf",
+      "ranges": [{ "startOffset": 20309, "endOffset": 20728, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseOr",
+      "ranges": [{ "startOffset": 20749, "endOffset": 20964, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseAnd",
+      "ranges": [{ "startOffset": 20986, "endOffset": 21204, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseNot",
+      "ranges": [{ "startOffset": 21226, "endOffset": 21418, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseIn",
+      "ranges": [{ "startOffset": 21439, "endOffset": 22286, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseIs",
+      "ranges": [{ "startOffset": 22436, "endOffset": 23020, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseCompare",
+      "ranges": [{ "startOffset": 23046, "endOffset": 23693, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseConcat",
+      "ranges": [{ "startOffset": 23766, "endOffset": 24006, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseAdd",
+      "ranges": [{ "startOffset": 24028, "endOffset": 24265, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseSub",
+      "ranges": [{ "startOffset": 24287, "endOffset": 24524, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseMul",
+      "ranges": [{ "startOffset": 24546, "endOffset": 24783, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseDiv",
+      "ranges": [{ "startOffset": 24805, "endOffset": 25052, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseFloorDiv",
+      "ranges": [{ "startOffset": 25079, "endOffset": 25327, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseMod",
+      "ranges": [{ "startOffset": 25349, "endOffset": 25586, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parsePow",
+      "ranges": [{ "startOffset": 25608, "endOffset": 25850, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseUnary",
+      "ranges": [{ "startOffset": 25874, "endOffset": 26352, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parsePrimary",
+      "ranges": [{ "startOffset": 26378, "endOffset": 27828, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseFilterName",
+      "ranges": [{ "startOffset": 27857, "endOffset": 28141, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseFilterArgs",
+      "ranges": [{ "startOffset": 28170, "endOffset": 28436, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseFilter",
+      "ranges": [{ "startOffset": 28461, "endOffset": 28749, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseFilterStatement",
+      "ranges": [{ "startOffset": 28783, "endOffset": 29410, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseAggregate",
+      "ranges": [{ "startOffset": 29438, "endOffset": 31017, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseSignature",
+      "ranges": [{ "startOffset": 31045, "endOffset": 32386, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseUntilBlocks",
+      "ranges": [{ "startOffset": 32416, "endOffset": 32745, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseNodes",
+      "ranges": [{ "startOffset": 32769, "endOffset": 34851, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parse",
+      "ranges": [{ "startOffset": 34870, "endOffset": 34948, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseAsRoot",
+      "ranges": [{ "startOffset": 34973, "endOffset": 35053, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parse",
+      "ranges": [{ "startOffset": 35507, "endOffset": 35699, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

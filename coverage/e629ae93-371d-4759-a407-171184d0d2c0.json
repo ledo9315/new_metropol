@@ -1,0 +1,48 @@
+{
+  "scriptId": "364",
+  "url": "file:///Users/leoniddomahalskyy/Desktop/new_metropol/src/models/filmModel.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 1885, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getDb",
+      "ranges": [
+        { "startOffset": 157, "endOffset": 182, "count": 2 },
+        { "startOffset": 177, "endOffset": 182, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getAllFilms",
+      "ranges": [{ "startOffset": 229, "endOffset": 321, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "getFilmById",
+      "ranges": [
+        { "startOffset": 338, "endOffset": 554, "count": 2 },
+        { "startOffset": 463, "endOffset": 525, "count": 1 },
+        { "startOffset": 542, "endOffset": 549, "count": 1 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "createFilm",
+      "ranges": [{ "startOffset": 570, "endOffset": 1296, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "updateFilm",
+      "ranges": [{ "startOffset": 1312, "endOffset": 1701, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "deleteFilm",
+      "ranges": [{ "startOffset": 1705, "endOffset": 1880, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

@@ -1,30 +1,33 @@
 {% extends "layout.html" %} {% block content %}
-<movieDetail>
+<article class="movie-detail-page">
   <div class="grid-movieDetail">
-    <div class="movieDetail_Titel">
-      <h1> {{ film.title }}</h1>
+    <header class="movieDetail_Titel">
+      <h1>{{ film.title }}</h1>
+    </header>
+
+    <div class="movieDetail_Content">
+      <section class="movieDetail_Poster">
+        <figure>
+          <img src="{{ film.poster_url }}" alt="{{ film.title }}" />
+        </figure>
+      </section>
+
+      <section class="movieDetail_Info">
+        <div class="movieDetail_Text">
+          <p>{{ film.description }}</p>
+        </div>
+
+        <div class="movieDetail_Liste">
+          <h2>Details</h2>
+          <ul>
+            <li><strong>Erscheinungsjahr:</strong> {{ film.release_date }}</li>
+            <li><strong>Dauer:</strong> {{ film.duration }} Minuten</li>
+            <li><strong>Regisseur:</strong> {{ film.director }}</li>
+            <li><strong>Besetzung:</strong> {{ film.cast }}</li>
+          </ul>
+        </div>
+      </section>
     </div>
-
-
-
-    
-    <div class="movieDetail_Poster">
-      <img
-      src="{{ film.poster_url }}"
-      alt="{{ film.title }}"
-      />
-      <div class="movieDetail_Text">{{ film.description }}</div>
-    </div>
-
-    <div class="movieDetail_Liste">
-    <ul>
-      <li>{{ film.release_date }}</li>
-      <li>{{ film.duration }} Minuten </li>
-      <li>{{ film.director }}</li>
-      <li>{{ film.cast }}</li>
-    </ul>
   </div>
-  </div>
-
-</movieDetail>
+</article>
 {% endblock %}
