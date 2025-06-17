@@ -1,5 +1,3 @@
----
-
 **Standard Admin-Account:**
 
 - Benutzername: `admin`
