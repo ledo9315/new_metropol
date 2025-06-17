@@ -32,7 +32,19 @@
             alt="Kino Metropol Logo"
           />
         </a>
-        <nav role="navigation" aria-label="Hauptnavigation">
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="mobile-menu-btn"
+          aria-label="Navigation öffnen"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <nav role="navigation" aria-label="Hauptnavigation" class="main-nav">
           <ul>
             <li>
               <a
@@ -143,22 +155,10 @@
               </li>
             </ul>
           </nav>
-          <p class="copyright">Metropol Theater 2025</p>
         </div>
       </div>
     </footer>
-    <script>
-      window.onerror = function (msg, url, lineNo, columnNo, error) {
-        console.error("JavaScript Fehler:", {
-          message: msg,
-          url: url,
-          line: lineNo,
-          column: columnNo,
-          error: error,
-        });
-        return false;
-      };
-    </script>
+    <script src="/public/js/navigation.js"></script>
     {% block scripts %}{% endblock %}
   </body>
 </html>

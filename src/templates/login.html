@@ -6,7 +6,12 @@
   </div>
   {% endif %}
 
-  <form action="/admin/login" method="post" aria-labelledby="login-heading">
+  <form
+    class="login-form"
+    action="/admin/login-post"
+    method="post"
+    aria-labelledby="login-heading"
+  >
     <h2 id="login-heading">Admin-Anmeldung</h2>
 
     <div class="form-group">
@@ -15,7 +20,6 @@
         type="text"
         id="username"
         name="username"
-        required
         aria-describedby="username-help"
         autocomplete="username"
       />
@@ -30,7 +34,6 @@
         type="password"
         id="password"
         name="password"
-        required
         aria-describedby="password-help"
         autocomplete="current-password"
       />

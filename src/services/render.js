@@ -1,4 +1,4 @@
-import nunjucks from "npm:nunjucks@3.2.4";
+import nunjucks from "https://deno.land/x/nunjucks@3.2.4/mod.js";
 import { sanitizer } from "../utils/sanitizer.js";
 
 const _env = nunjucks.configure("src/templates", {

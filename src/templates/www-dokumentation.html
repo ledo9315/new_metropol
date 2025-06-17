@@ -19,7 +19,8 @@
     <p>
       Die Zielgruppe unserer Website sind Kinobesucher jeden Alters, die sich
       über das aktuelle Filmprogramm informieren möchten. Dazu gehören Familien,
-      Filmliebhaber und alle, die einen schönen Abend im Kino verbringen möchten.
+      Filmliebhaber und alle, die einen schönen Abend im Kino verbringen
+      möchten.
     </p>
   </section>
 
@@ -57,7 +58,11 @@
   <section aria-labelledby="sicherheit-heading">
     <h1 id="sicherheit-heading">Sicherheit und Bedrohungsmodell</h1>
     <h2>Mögliche Gefahren</h2>
-    <p><strong>Was könnte passieren, wenn unsere Daten veröffentlicht werden?</strong></p>
+    <p>
+      <strong
+        >Was könnte passieren, wenn unsere Daten veröffentlicht werden?</strong
+      >
+    </p>
     <ul>
       <li>Admin-Passwörter könnten missbraucht werden</li>
       <li>Filmdaten könnten manipuliert werden</li>
@@ -67,23 +72,61 @@
 
     <h2>Wie könnte das passieren?</h2>
     <ul>
-      <li><strong>SQL-Injection:</strong> Angreifer versuchen, schädlichen Code über Formulare einzuschleusen</li>
-      <li><strong>XSS-Angriffe:</strong> Gefährlicher JavaScript-Code könnte in die Website eingebaut werden</li>
-      <li><strong>Unsichere Passwörter:</strong> Schwache Passwörter könnten erraten werden</li>
-      <li><strong>Direkter Zugriff:</strong> Jemand könnte versuchen, direkt auf Admin-Bereiche zuzugreifen</li>
+      <li>
+        <strong>SQL-Injection:</strong> Angreifer versuchen, schädlichen Code
+        über Formulare einzuschleusen
+      </li>
+      <li>
+        <strong>XSS-Angriffe:</strong> Gefährlicher JavaScript-Code könnte in
+        die Website eingebaut werden
+      </li>
+      <li>
+        <strong>Unsichere Passwörter:</strong> Schwache Passwörter könnten
+        erraten werden
+      </li>
+      <li>
+        <strong>Direkter Zugriff:</strong> Jemand könnte versuchen, direkt auf
+        Admin-Bereiche zuzugreifen
+      </li>
     </ul>
 
     <h2>Unsere Schutzmaßnahmen</h2>
     <ul>
-      <li><strong>Passwort-Hashing:</strong> Alle Passwörter werden mit bcrypt gehashed gespeichert</li>
-      <li><strong>SQL-Injection-Schutz:</strong> Wir verwenden prepared statements mit Platzhaltern und Pattern-basierte Erkennung</li>
-      <li><strong>XSS-Schutz:</strong> Multi-Pattern XSS-Erkennung mit HTML-Entity-Encoding, Script-Tag-Filterung und Event-Handler-Blockierung</li>
-      <li><strong>CSRF-Protection:</strong> Token-basierte Sicherheit für alle Formulare</li>
-      <li><strong>Input-Sanitization:</strong> Umfassende Validierung und Bereinigung aller Eingaben</li>
-      <li><strong>Zugriffskontrolle:</strong> Admin-Bereiche sind durch Middleware geschützt</li>
-      <li><strong>Rate Limiting:</strong> Schutz vor automatisierten Angriffen</li>
-      <li><strong>Security Headers:</strong> Content Security Policy, X-Frame-Options, HSTS</li>
-      <li><strong>Session-Sicherheit:</strong> Sichere Session-Verwaltung mit automatischem Timeout</li>
+      <li>
+        <strong>Passwort-Hashing:</strong> Alle Passwörter werden mit bcrypt
+        gehashed gespeichert
+      </li>
+      <li>
+        <strong>SQL-Injection-Schutz:</strong> Wir verwenden prepared statements
+        mit Platzhaltern und Pattern-basierte Erkennung
+      </li>
+      <li>
+        <strong>XSS-Schutz:</strong> Multi-Pattern XSS-Erkennung mit
+        HTML-Entity-Encoding, Script-Tag-Filterung und Event-Handler-Blockierung
+      </li>
+      <li>
+        <strong>CSRF-Protection:</strong> Token-basierte Sicherheit für alle
+        Formulare
+      </li>
+      <li>
+        <strong>Input-Sanitization:</strong> Umfassende Validierung und
+        Bereinigung aller Eingaben
+      </li>
+      <li>
+        <strong>Zugriffskontrolle:</strong> Admin-Bereiche sind durch Middleware
+        geschützt
+      </li>
+      <li>
+        <strong>Rate Limiting:</strong> Schutz vor automatisierten Angriffen
+      </li>
+      <li>
+        <strong>Security Headers:</strong> Content Security Policy,
+        X-Frame-Options, HSTS
+      </li>
+      <li>
+        <strong>Session-Sicherheit:</strong> Sichere Session-Verwaltung mit
+        automatischem Timeout
+      </li>
     </ul>
   </section>
 
@@ -91,50 +134,87 @@
     <h1 id="qualitaet-heading">Qualitätssicherung durch Tests</h1>
     <h2>Umfassende Test-Suite</h2>
     <p>
-      Unser Projekt verfügt über eine ausführliche Test-Suite mit fast 100 automatisierten Tests,
-      die verschiedene Aspekte der Anwendung abdecken und in dem <code>tests/</code> Verzeichnis
-      organisiert sind:
+      Unser Projekt verfügt über eine ausführliche Test-Suite mit fast 100
+      automatisierten Tests, die verschiedene Aspekte der Anwendung abdecken und
+      in dem <code>tests/</code> Verzeichnis organisiert sind:
     </p>
 
     <h3>Unit-Tests</h3>
     <ul>
-      <li><strong>Sanitizer-Tests:</strong> Validierung aller Input-Sanitization-Funktionen</li>
-      <li><strong>Database-Tests:</strong> Sichere SQL-Query-Ausführung und Injection-Schutz</li>
-      <li><strong>Model-Tests:</strong> CRUD-Operationen für Filme, Shows und User</li>
-      <li><strong>Validation-Tests:</strong> XSS-Pattern-Erkennung und HTML-Entity-Encoding</li>
+      <li>
+        <strong>Sanitizer-Tests:</strong> Validierung aller
+        Input-Sanitization-Funktionen
+      </li>
+      <li>
+        <strong>Database-Tests:</strong> Sichere SQL-Query-Ausführung und
+        Injection-Schutz
+      </li>
+      <li>
+        <strong>Model-Tests:</strong> CRUD-Operationen für Filme, Shows und User
+      </li>
+      <li>
+        <strong>Validation-Tests:</strong> XSS-Pattern-Erkennung und
+        HTML-Entity-Encoding
+      </li>
       <li><strong>CSRF-Tests:</strong> Token-Generierung und -Validierung</li>
     </ul>
 
     <h3>Integration-Tests</h3>
     <ul>
-      <li><strong>Controller-Tests:</strong> End-to-End-Tests aller HTTP-Endpoints</li>
-      <li><strong>Security-Tests:</strong> Rate-Limiting und Security-Header-Validation</li>
-      <li><strong>Session-Tests:</strong> Login/Logout-Funktionalität und Session-Sicherheit</li>
-      <li><strong>File-Upload-Tests:</strong> Sichere Poster-Upload-Funktionalität</li>
-      <li><strong>Error-Handling-Tests:</strong> Proper Fehlerbehandlung und Logging</li>
+      <li>
+        <strong>Controller-Tests:</strong> End-to-End-Tests aller HTTP-Endpoints
+      </li>
+      <li>
+        <strong>Security-Tests:</strong> Rate-Limiting und
+        Security-Header-Validation
+      </li>
+      <li>
+        <strong>Session-Tests:</strong> Login/Logout-Funktionalität und
+        Session-Sicherheit
+      </li>
+      <li>
+        <strong>File-Upload-Tests:</strong> Sichere Poster-Upload-Funktionalität
+      </li>
+      <li>
+        <strong>Error-Handling-Tests:</strong> Proper Fehlerbehandlung und
+        Logging
+      </li>
     </ul>
 
     <h3>Test-Coverage</h3>
     <p>
       Die Test-Suite erreicht eine Code-Coverage von über 63% und stellt sicher,
-      dass alle kritischen Sicherheitsfeatures und Geschäftslogik korrekt funktionieren.
-      Tests werden automatisch bei jeder Code-Änderung ausgeführt und die Ergebnisse
-      werden im <code>coverage/</code> Verzeichnis gespeichert.
+      dass alle kritischen Sicherheitsfeatures und Geschäftslogik korrekt
+      funktionieren. Tests werden automatisch bei jeder Code-Änderung ausgeführt
+      und die Ergebnisse werden im <code>coverage/</code> Verzeichnis
+      gespeichert.
     </p>
 
     <h3>Sicherheitstests</h3>
     <ul>
-      <li><strong>SQL-Injection-Tests:</strong> Verschiedene Injection-Patterns werden getestet</li>
-      <li><strong>XSS-Prevention-Tests:</strong> Script-Tag-Filterung und Event-Handler-Blockierung</li>
-      <li><strong>Input-Validation-Tests:</strong> Grenzwerte und ungültige Eingaben</li>
-      <li><strong>Authentication-Tests:</strong> Password-Hashing und Session-Sicherheit</li>
+      <li>
+        <strong>SQL-Injection-Tests:</strong> Verschiedene Injection-Patterns
+        werden getestet
+      </li>
+      <li>
+        <strong>XSS-Prevention-Tests:</strong> Script-Tag-Filterung und
+        Event-Handler-Blockierung
+      </li>
+      <li>
+        <strong>Input-Validation-Tests:</strong> Grenzwerte und ungültige
+        Eingaben
+      </li>
+      <li>
+        <strong>Authentication-Tests:</strong> Password-Hashing und
+        Session-Sicherheit
+      </li>
     </ul>
 
     <h3>Test-Ausführung</h3>
     <p>
-      Tests können mit <code>deno test</code> ausgeführt werden. Das Projekt nutzt
-      Denos eingebaute Test-Runner und Assertion-Bibliothek für maximale Kompatibilität
-      und Performance.
+      Tests können mit <code>deno test</code> ausgeführt werden. Das Projekt
+      nutzt Denos eingebaute Test-Runner und Assertion-Bibliothek für maximale
+      Kompatibilität und Performance.
     </p>
   </section>
 
@@ -144,29 +224,43 @@
 
     <h3>1. Filme</h3>
     <ul>
-      <li><strong>Felder:</strong> Titel, Regisseur, Dauer, Beschreibung, Besetzung, Poster, Erscheinungsjahr</li>
-      <li><strong>Funktionen:</strong> Erstellen, Anzeigen, Bearbeiten, Löschen</li>
+      <li>
+        <strong>Felder:</strong> Titel, Regisseur, Dauer, Beschreibung,
+        Besetzung, Poster, Erscheinungsjahr
+      </li>
+      <li>
+        <strong>Funktionen:</strong> Erstellen, Anzeigen, Bearbeiten, Löschen
+      </li>
       <li><strong>Besonderheiten:</strong> Poster-Upload mit Validierung</li>
     </ul>
 
     <h3>2. Vorstellungen (Shows)</h3>
     <ul>
       <li><strong>Felder:</strong> Film-Zuordnung, Datum, Uhrzeit</li>
-      <li><strong>Funktionen:</strong> Zu Filmen hinzufügen, Bearbeiten, Löschen</li>
-      <li><strong>Besonderheiten:</strong> Automatische Verknüpfung mit Filmen</li>
+      <li>
+        <strong>Funktionen:</strong> Zu Filmen hinzufügen, Bearbeiten, Löschen
+      </li>
+      <li>
+        <strong>Besonderheiten:</strong> Automatische Verknüpfung mit Filmen
+      </li>
     </ul>
 
     <h3>3. Benutzer (Admins)</h3>
     <ul>
       <li><strong>Felder:</strong> Benutzername, gehashtes Passwort</li>
-      <li><strong>Funktionen:</strong> Anmelden, Abmelden, Session-Verwaltung</li>
+      <li>
+        <strong>Funktionen:</strong> Anmelden, Abmelden, Session-Verwaltung
+      </li>
     </ul>
   </section>
 
   <section aria-labelledby="datenbank-heading">
     <h1 id="datenbank-heading">Aufbau der Datenbank</h1>
     <h2>Datenbankstruktur</h2>
-    <p>Wir verwenden SQLite als Datenbank. Die Struktur ist einfach aber effektiv:</p>
+    <p>
+      Wir verwenden SQLite als Datenbank. Die Struktur ist einfach aber
+      effektiv:
+    </p>
 
     <h3>Tabelle: films</h3>
     <ul>
@@ -200,9 +294,9 @@
 
     <h2>Datenbankverbindungen</h2>
     <p>
-      Die Shows-Tabelle ist über film_id mit der Films-Tabelle verknüpft.
-      Wenn ein Film gelöscht wird, werden automatisch alle zugehörigen
-      Vorstellungen mit gelöscht (CASCADE DELETE).
+      Die Shows-Tabelle ist über film_id mit der Films-Tabelle verknüpft. Wenn
+      ein Film gelöscht wird, werden automatisch alle zugehörigen Vorstellungen
+      mit gelöscht (CASCADE DELETE).
     </p>
   </section>
 
@@ -223,7 +317,9 @@ src/
     <h2>Model-View-Controller Konzept</h2>
     <h3>Models (Datenbank)</h3>
     <ul>
-      <li><strong>filmModel.js:</strong> Alle Datenbankoperationen für Filme</li>
+      <li>
+        <strong>filmModel.js:</strong> Alle Datenbankoperationen für Filme
+      </li>
       <li><strong>showModel.js:</strong> Operationen für Vorstellungen</li>
       <li><strong>userModel.js:</strong> Benutzer-Verwaltung</li>
     </ul>
@@ -246,8 +342,8 @@ src/
 
     <h2>Warum diese Aufteilung?</h2>
     <p>
-      Die MVC-Architektur trennt sauber zwischen Daten (Model), Darstellung (View)
-      und Logik (Controller). Das macht den Code:
+      Die MVC-Architektur trennt sauber zwischen Daten (Model), Darstellung
+      (View) und Logik (Controller). Das macht den Code:
     </p>
     <ul>
       <li>Einfacher zu verstehen</li>
@@ -281,8 +377,8 @@ src/
 
     <h2>Warum diese Struktur?</h2>
     <p>
-      Die URLs sind logisch aufgebaut und selbsterklärend. Besucher finden
-      sich schnell zurecht, und Suchmaschinen können die Seiten gut verstehen.
+      Die URLs sind logisch aufgebaut und selbsterklärend. Besucher finden sich
+      schnell zurecht, und Suchmaschinen können die Seiten gut verstehen.
     </p>
   </section>
 
@@ -298,8 +394,13 @@ src/
     <h2>JavaScript-Verbesserungen</h2>
     <p>Wo wir JavaScript einsetzen:</p>
     <ul>
-      <li><strong>Datei-Upload-Vorschau:</strong> Zeigt Bilder vor dem Upload an</li>
-      <li><strong>Dynamische Felder:</strong> Vorstellungen zu Filmen hinzufügen/entfernen</li>
+      <li>
+        <strong>Datei-Upload-Vorschau:</strong> Zeigt Bilder vor dem Upload an
+      </li>
+      <li>
+        <strong>Dynamische Felder:</strong> Vorstellungen zu Filmen
+        hinzufügen/entfernen
+      </li>
     </ul>
 
     <h2>Warum Progressive Enhancement?</h2>
@@ -330,11 +431,18 @@ src/
     </ul>
 
     <h2>Warum diese Auswahl?</h2>
-    <ul></ul>
+    <ul>
       <li><strong>Oak:</strong> Modernes, sicheres Framework für Deno</li>
-      <li><strong>SQLite:</strong> Einfach, zuverlässig, keine separate Installation nötig</li>
-      <li><strong>Nunjucks:</strong> Sicheres Template-System mit Auto-Escaping</li>
-      <li><strong>Eigenes CSS:</strong> Vollständige Kontrolle über das Design</li>
+      <li>
+        <strong>SQLite:</strong> Einfach, zuverlässig, keine separate
+        Installation nötig
+      </li>
+      <li>
+        <strong>Nunjucks:</strong> Sicheres Template-System mit Auto-Escaping
+      </li>
+      <li>
+        <strong>Eigenes CSS:</strong> Vollständige Kontrolle über das Design
+      </li>
     </ul>
   </section>
 
@@ -342,8 +450,8 @@ src/
     <h1 id="vorlagen-heading">Vorlagen und Inspiration</h1>
     <h2>Lehrmaterialien</h2>
     <p>
-      Die Grundstruktur basiert auf den Übungen aus dem WWW-Labor.
-      Besonders die letzte Aufgabe war eine gute Vorlage für unser Projekt.
+      Die Grundstruktur basiert auf den Übungen aus dem WWW-Labor. Besonders die
+      letzte Aufgabe war eine gute Vorlage für unser Projekt.
     </p>
 
     <h2>Design-Inspiration</h2>
@@ -354,7 +462,7 @@ src/
     </ul>
 
     <h2>Technische Vorbilder</h2>
-    <ul></ul>
+    <ul>
       <li>MVC-Pattern aus bewährten Web-Frameworks</li>
       <li>REST-API Design-Prinzipien</li>
       <li>Moderne Sicherheitspraktiken</li>
@@ -364,22 +472,31 @@ src/
   <section aria-labelledby="probleme-heading">
     <h1 id="probleme-heading">Aufgetretene Probleme und Lösungen</h1>
     <h2>Oak FormData Problem</h2>
-    <p><strong>Problem:</strong> Oak v12.6.1 hatte Probleme mit Multipart-FormData</p>
-    <p><strong>Lösung:</strong> Eigene FormDataParser-Klasse entwickelt, die auf Byte-Ebene arbeitet</p>
+    <p>
+      <strong>Problem:</strong> Oak v12.6.1 hatte Probleme mit
+      Multipart-FormData
+    </p>
+    <p>
+      <strong>Lösung:</strong> Eigene FormDataParser-Klasse entwickelt, die auf
+      Byte-Ebene arbeitet
+    </p>
 
     <h2>Poster-Upload verschwindet</h2>
     <p><strong>Problem:</strong> Poster waren nach dem Erstellen weg</p>
-    <p><strong>Lösung:</strong> Binary-Data richtig behandeln, keine Text-Konvertierung</p>
+    <p>
+      <strong>Lösung:</strong> Binary-Data richtig behandeln, keine
+      Text-Konvertierung
+    </p>
 
     <h2>Falsche HTTP-Status-Codes</h2>
     <p><strong>Problem:</strong> API gab immer 302 Redirect zurück</p>
-    <p><strong>Lösung:</strong> Unterscheidung zwischen Browser und API-Requests</p>
+    <p>
+      <strong>Lösung:</strong> Unterscheidung zwischen Browser und API-Requests
+    </p>
 
     <h2>Unit-Tests schlagen fehl</h2>
     <p><strong>Problem:</strong> Tests verwendeten alte FormData-API</p>
     <p><strong>Lösung:</strong> Test-Mocks für neue FormDataParser erstellt</p>
   </section>
-
-
 </div>
 {% endblock %}

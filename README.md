@@ -152,7 +152,7 @@ DATABASE_PATH=./cinema.db
 
 ```
 src/
-├── controllers/     # Controller für Geschäftslogik
+├── controllers/     # Controller
 ├── models/         # Datenbank-Models
 ├── routes/         # URL-Routing
 ├── templates/      # HTML-Templates (Views)
