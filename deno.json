@@ -1,8 +1,8 @@
 {
   "tasks": {
-    "start": "denon run --allow-net --allow-write --allow-read --allow-env app.js",
-    "dev": "denon run --allow-net --allow-write --allow-read --allow-env --watch app.js",
-    "test:all": "denon test --allow-net --allow-write --allow-read --allow-env tests/",
+    "start": "deno run --allow-net --allow-write --allow-read --allow-env app.js",
+    "dev": "deno run --allow-net --allow-write --allow-read --allow-env --watch app.js",
+    "test:all": "deno test --allow-net --allow-write --allow-read --allow-env tests/",
     "test:unit": "deno test --allow-net --allow-write --allow-read --allow-env tests/unit/",
     "test:integration": "deno test --allow-net --allow-write --allow-read --allow-env tests/integration/",
     "test:coverage": "deno test --allow-net --allow-write --allow-read --allow-env --coverage=coverage tests/",
@@ -11,8 +11,7 @@
     "db:reset-and-seed": "deno run --allow-read --allow-write --allow-env scripts/db-seed.js reset-and-seed",
     "db:full": "deno run --allow-read --allow-write --allow-env scripts/db-seed.js full",
     "db:stats": "deno run --allow-read --allow-write --allow-env scripts/db-seed.js stats",
-    "db:schema": "deno run --allow-read --allow-write --allow-env scripts/db-seed.js schema",
-    "build": "deno run --allow-read --allow-write scripts/minify-css.js public/style.css public/style.min.css"
+    "db:schema": "deno run --allow-read --allow-write --allow-env scripts/db-seed.js schema"
   },
   "imports": {
     "oak": "https://deno.land/x/oak@v12.6.1/mod.ts",
