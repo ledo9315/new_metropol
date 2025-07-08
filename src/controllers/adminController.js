@@ -12,12 +12,10 @@ export const adminController = {
     const message = ctx.request.url.searchParams.get("message") || null;
     const error = ctx.request.url.searchParams.get("error") || null;
 
-    // Parse die zurückgegebenen Formulardaten bei Fehlern aus URL-Parametern
     let formData = null;
     if (action === "create" || action === "edit") {
       const urlParams = ctx.request.url.searchParams;
 
-      // Sammle alle Formulardaten aus den URL-Parametern
       const formFields = {};
       const showsData = [];
 
@@ -54,7 +52,7 @@ export const adminController = {
         }
       }
 
-      // Konvertiere zu Array
+      // Konvertieren zu Array
       for (const [index, showData] of showParams.entries()) {
         showsData[index] = showData;
       }
@@ -137,7 +135,7 @@ export const adminController = {
       username: user.username,
     });
 
-    // Setze Timestamp für Session-Timeout-Verwaltung
+    // Timestamp für Session-Timeout-Verwaltung
     await ctx.state.session.set("lastActivity", Date.now());
 
     ctx.response.redirect("/admin?message=Erfolgreich eingeloggt");

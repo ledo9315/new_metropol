@@ -1,0 +1,69 @@
+{
+  "scriptId": "331",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/tests/integration/performance.test.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 3720, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 351, "endOffset": 3717, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 405, "endOffset": 509, "count": 4 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 525, "endOffset": 588, "count": 4 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 627, "endOffset": 2865, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        { "startOffset": 690, "endOffset": 1267, "count": 1 },
+        { "startOffset": 832, "endOffset": 1051, "count": 100 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        { "startOffset": 1315, "endOffset": 1854, "count": 1 },
+        { "startOffset": 1387, "endOffset": 1538, "count": 50 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        { "startOffset": 1906, "endOffset": 2859, "count": 1 },
+        { "startOffset": 2142, "endOffset": 2390, "count": 20 },
+        { "startOffset": 2536, "endOffset": 2623, "count": 10 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 2902, "endOffset": 3713, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        { "startOffset": 2970, "endOffset": 3707, "count": 1 },
+        { "startOffset": 3110, "endOffset": 3466, "count": 1000 }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

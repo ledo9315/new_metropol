@@ -1,0 +1,21 @@
+{
+  "scriptId": "339",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/middleware/staticFileMiddleware.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 946, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "staticFileMiddleware",
+      "ranges": [{ "startOffset": 101, "endOffset": 865, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "servePublicFiles",
+      "ranges": [{ "startOffset": 883, "endOffset": 945, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

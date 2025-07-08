@@ -1,0 +1,11 @@
+{
+  "scriptId": "405",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/config/config.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 771, "count": 1 }],
+      "isBlockCoverage": true
+    }
+  ]
+}

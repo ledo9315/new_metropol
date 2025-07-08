@@ -1,0 +1,67 @@
+{
+  "scriptId": "371",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/utils/formDataParser.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 5208, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "parseFormData",
+      "ranges": [
+        { "startOffset": 140, "endOffset": 938, "count": 1 },
+        { "startOffset": 268, "endOffset": 315, "count": 0 },
+        { "startOffset": 519, "endOffset": 934, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "extractBoundary",
+      "ranges": [{ "startOffset": 949, "endOffset": 1094, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseMultipartBytes",
+      "ranges": [{ "startOffset": 1105, "endOffset": 3148, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "splitBytesByBoundary",
+      "ranges": [{ "startOffset": 3159, "endOffset": 3879, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "findBytesInBytes",
+      "ranges": [{ "startOffset": 3890, "endOffset": 4245, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "findHeaderEnd",
+      "ranges": [{ "startOffset": 4256, "endOffset": 4406, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "parseUrlEncodedData",
+      "ranges": [
+        { "startOffset": 4417, "endOffset": 4769, "count": 1 },
+        { "startOffset": 4555, "endOffset": 4623, "count": 4 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 4714, "endOffset": 4756, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "processField",
+      "ranges": [
+        { "startOffset": 4780, "endOffset": 5205, "count": 4 },
+        { "startOffset": 4866, "endOffset": 5150, "count": 0 },
+        { "startOffset": 5189, "endOffset": 5194, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

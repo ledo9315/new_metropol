@@ -14,9 +14,8 @@
   --text-light: #595959; /* Verbessert von #666666 für WCAG AA Konformität (7:1 Kontrast) */
   --border-color: #e0e0e0;
 
-  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  --font-secondary: "Crimson Text", Georgia, serif;
+  --font-primary: "League Spartan", sans-serif;
+  --font-secondary: "League Spartan", sans-serif;
 
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -1896,5 +1895,18 @@ textarea:focus {
 
   .btn:hover {
     transform: none;
+  }
+}
+
+.startseite__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .startseite__logo img {
+    width: 50vw;
   }
 }

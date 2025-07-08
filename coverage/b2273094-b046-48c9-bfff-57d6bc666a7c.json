@@ -1,0 +1,31 @@
+{
+  "scriptId": "334",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/utils/formatDate.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 664, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "formatDate",
+      "ranges": [{ "startOffset": 7, "endOffset": 264, "count": 9 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getTodayDate",
+      "ranges": [{ "startOffset": 273, "endOffset": 333, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getTomorrowDate",
+      "ranges": [{ "startOffset": 342, "endOffset": 478, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getDayAfterTomorrowDate",
+      "ranges": [{ "startOffset": 487, "endOffset": 663, "count": 1 }],
+      "isBlockCoverage": true
+    }
+  ]
+}

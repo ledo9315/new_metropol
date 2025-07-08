@@ -1,0 +1,67 @@
+{
+  "scriptId": "334",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/controllers/siteController.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 2346, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "home",
+      "ranges": [{ "startOffset": 251, "endOffset": 753, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "programm",
+      "ranges": [
+        { "startOffset": 768, "endOffset": 1380, "count": 1 },
+        { "startOffset": 909, "endOffset": 1297, "count": 7 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "filmDetail",
+      "ranges": [
+        { "startOffset": 1397, "endOffset": 1762, "count": 2 },
+        { "startOffset": 1518, "endOffset": 1761, "count": 1 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "about",
+      "ranges": [{ "startOffset": 1774, "endOffset": 1841, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "prices",
+      "ranges": [{ "startOffset": 1853, "endOffset": 1918, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "imprint",
+      "ranges": [{ "startOffset": 1931, "endOffset": 1999, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "privacy",
+      "ranges": [{ "startOffset": 2012, "endOffset": 2082, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "kolophon",
+      "ranges": [{ "startOffset": 2096, "endOffset": 2163, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "timeline",
+      "ranges": [{ "startOffset": 2177, "endOffset": 2246, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "documentation",
+      "ranges": [{ "startOffset": 2265, "endOffset": 2341, "count": 1 }],
+      "isBlockCoverage": true
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "scriptId": "370",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/models/showModel.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 1854, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getDb",
+      "ranges": [{ "startOffset": 111, "endOffset": 136, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "getAllShows",
+      "ranges": [{ "startOffset": 183, "endOffset": 383, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "getShowsByDate",
+      "ranges": [{ "startOffset": 403, "endOffset": 679, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "getShowsByFilmId",
+      "ranges": [{ "startOffset": 701, "endOffset": 856, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "getShowById",
+      "ranges": [{ "startOffset": 873, "endOffset": 1012, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "createShow",
+      "ranges": [{ "startOffset": 1028, "endOffset": 1242, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "updateShow",
+      "ranges": [{ "startOffset": 1258, "endOffset": 1647, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "deleteShow",
+      "ranges": [{ "startOffset": 1663, "endOffset": 1739, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "deleteShowsByFilmId",
+      "ranges": [{ "startOffset": 1744, "endOffset": 1849, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

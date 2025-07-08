@@ -1,3 +1,4 @@
+// deno-lint-ignore-file
 /**
  * Admin Dashboard JavaScript
  * Kino Metropol - Dynamische Formular-Funktionen für das Admin-Dashboard
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
  * Neue Vorstellung hinzufügen
  * Erstellt dynamisch ein neues Formular-Element für eine Vorstellung
  */
-function _addShowField() {
+function addShowField() {
   const container = document.getElementById("shows-container");
 
   if (!container) {

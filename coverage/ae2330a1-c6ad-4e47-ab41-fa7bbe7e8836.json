@@ -1,0 +1,35 @@
+{
+  "scriptId": "366",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/services/render.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 1042, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "render",
+      "ranges": [
+        { "startOffset": 218, "endOffset": 556, "count": 10 },
+        { "startOffset": 438, "endOffset": 554, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "sanitizeContext",
+      "ranges": [
+        { "startOffset": 558, "endOffset": 1041, "count": 46 },
+        { "startOffset": 621, "endOffset": 754, "count": 14 },
+        { "startOffset": 687, "endOffset": 734, "count": 0 },
+        { "startOffset": 754, "endOffset": 782, "count": 32 },
+        { "startOffset": 782, "endOffset": 824, "count": 12 },
+        { "startOffset": 824, "endOffset": 836, "count": 20 },
+        { "startOffset": 836, "endOffset": 862, "count": 17 },
+        { "startOffset": 864, "endOffset": 1024, "count": 13 },
+        { "startOffset": 944, "endOffset": 998, "count": 28 },
+        { "startOffset": 1024, "endOffset": 1040, "count": 7 }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

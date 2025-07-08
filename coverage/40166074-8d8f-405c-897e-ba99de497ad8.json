@@ -1,0 +1,76 @@
+{
+  "scriptId": "368",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/db/database.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 3162, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "SecureDatabase",
+      "ranges": [{ "startOffset": 204, "endOffset": 291, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "setupPragmas",
+      "ranges": [{ "startOffset": 295, "endOffset": 560, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "validateUserInput",
+      "ranges": [{ "startOffset": 564, "endOffset": 795, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "validateQueryStructure",
+      "ranges": [{ "startOffset": 799, "endOffset": 1084, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "validateSchemaOperation",
+      "ranges": [{ "startOffset": 1138, "endOffset": 1430, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "safeQuery",
+      "ranges": [{ "startOffset": 1434, "endOffset": 1798, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "safeQueryEntries",
+      "ranges": [{ "startOffset": 1802, "endOffset": 2180, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "internalQuery",
+      "ranges": [{ "startOffset": 2232, "endOffset": 2316, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "internalQueryEntries",
+      "ranges": [{ "startOffset": 2320, "endOffset": 2418, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "schemaQuery",
+      "ranges": [{ "startOffset": 2468, "endOffset": 2750, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "transaction",
+      "ranges": [{ "startOffset": 2754, "endOffset": 3000, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "get lastInsertId",
+      "ranges": [{ "startOffset": 3004, "endOffset": 3061, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "close",
+      "ranges": [{ "startOffset": 3065, "endOffset": 3099, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

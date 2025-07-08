@@ -1,0 +1,21 @@
+{
+  "scriptId": "433",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/services/render.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 1042, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "render",
+      "ranges": [{ "startOffset": 218, "endOffset": 556, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "sanitizeContext",
+      "ranges": [{ "startOffset": 558, "endOffset": 1041, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

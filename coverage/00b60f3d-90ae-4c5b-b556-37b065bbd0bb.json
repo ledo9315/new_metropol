@@ -1,0 +1,36 @@
+{
+  "scriptId": "394",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/controllers/filmController.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 11049, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "createFormDataParams",
+      "ranges": [{ "startOffset": 981, "endOffset": 1491, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "index",
+      "ranges": [{ "startOffset": 1535, "endOffset": 1770, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "create",
+      "ranges": [{ "startOffset": 1783, "endOffset": 5241, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "update",
+      "ranges": [{ "startOffset": 5254, "endOffset": 10508, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "delete",
+      "ranges": [{ "startOffset": 10521, "endOffset": 11044, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

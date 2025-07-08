@@ -1,0 +1,50 @@
+{
+  "scriptId": "336",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/controllers/filmController.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 11049, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "createFormDataParams",
+      "ranges": [
+        { "startOffset": 981, "endOffset": 1491, "count": 1 },
+        { "startOffset": 1141, "endOffset": 1258, "count": 4 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 1308, "endOffset": 1458, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "index",
+      "ranges": [{ "startOffset": 1535, "endOffset": 1770, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "create",
+      "ranges": [
+        { "startOffset": 1783, "endOffset": 5241, "count": 1 },
+        { "startOffset": 1914, "endOffset": 2363, "count": 0 },
+        { "startOffset": 2589, "endOffset": 2737, "count": 4 },
+        { "startOffset": 3164, "endOffset": 3302, "count": 0 },
+        { "startOffset": 3304, "endOffset": 5237, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "update",
+      "ranges": [{ "startOffset": 5254, "endOffset": 10508, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "delete",
+      "ranges": [{ "startOffset": 10521, "endOffset": 11044, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}

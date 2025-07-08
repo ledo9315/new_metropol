@@ -1,0 +1,74 @@
+{
+  "scriptId": "364",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/models/filmModel.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 1885, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getDb",
+      "ranges": [
+        { "startOffset": 157, "endOffset": 182, "count": 15 },
+        { "startOffset": 177, "endOffset": 182, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getAllFilms",
+      "ranges": [{ "startOffset": 229, "endOffset": 321, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getFilmById",
+      "ranges": [
+        { "startOffset": 338, "endOffset": 554, "count": 2 },
+        { "startOffset": 463, "endOffset": 525, "count": 1 },
+        { "startOffset": 542, "endOffset": 549, "count": 1 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "createFilm",
+      "ranges": [{ "startOffset": 570, "endOffset": 1296, "count": 2 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        { "startOffset": 754, "endOffset": 1290, "count": 2 },
+        { "startOffset": 1260, "endOffset": 1283, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "updateFilm",
+      "ranges": [{ "startOffset": 1312, "endOffset": 1701, "count": 2 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        { "startOffset": 1359, "endOffset": 1695, "count": 2 },
+        { "startOffset": 1476, "endOffset": 1489, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 1523, "endOffset": 1544, "count": 14 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "deleteFilm",
+      "ranges": [{ "startOffset": 1705, "endOffset": 1880, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 1753, "endOffset": 1874, "count": 1 }],
+      "isBlockCoverage": true
+    }
+  ]
+}

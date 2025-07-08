@@ -1,0 +1,16 @@
+{
+  "scriptId": "395",
+  "url": "file:///Users/leoniddomahalskyy/Documents/new_metropol/src/middleware/authMiddleware.js",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 941, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "adminMiddleware",
+      "ranges": [{ "startOffset": 31, "endOffset": 939, "count": 0 }],
+      "isBlockCoverage": false
+    }
+  ]
+}
